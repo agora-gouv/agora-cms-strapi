@@ -7,7 +7,7 @@ server {
 
         proxy_set_header  X-Remote-Address $remote_addr;
         proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_pass http://localhost:<%= ENV['STRAPI_PORT'] %>;
+        proxy_pass http://<%= ENV['STRAPI_HOST'] %>:<%= ENV['STRAPI_PORT'] %>;
         proxy_redirect default;
     }
 }
