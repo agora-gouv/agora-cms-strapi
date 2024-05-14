@@ -1,1 +1,1 @@
-web: yarn start
+web: (bin/run &) && yarn start
