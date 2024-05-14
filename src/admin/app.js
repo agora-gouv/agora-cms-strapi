@@ -1,5 +1,5 @@
 import AuthLogo from "./extensions/agora-logo.svg";
-import favicon from "./extensions/agora-favicon-192.png";
+import favicon from "./extensions/agora-favicon.ico";
 
 const config = {
   locales: ['fr', 'en'],

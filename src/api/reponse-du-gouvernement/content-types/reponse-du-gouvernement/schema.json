@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reponse_du_gouvernements",
+  "info": {
+    "singularName": "reponse-du-gouvernement",
+    "pluralName": "reponse-du-gouvernements",
+    "displayName": "Réponse du gouvernement",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "auteur": {
+      "type": "string",
+      "required": true
+    },
+    "auteurPortraitUrl": {
+      "type": "string",
+      "required": true
+    },
+    "reponseDate": {
+      "type": "date",
+      "required": true
+    },
+    "questionId": {
+      "type": "string",
+      "required": true
+    },
+    "reponseType": {
+      "type": "dynamiczone",
+      "components": [
+        "video.reponse-video",
+        "text.reponsetextuelle"
+      ],
+      "required": true,
+      "max": 1
+    },
+    "feedbackQuestion": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
