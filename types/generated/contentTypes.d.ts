@@ -380,11 +380,12 @@ export interface ApiReponseDuGouvernementReponseDuGouvernement
     reponseDate: Attribute.Date & Attribute.Required;
     questionId: Attribute.String & Attribute.Required;
     reponseType: Attribute.DynamicZone<
-      ['video.reponse-video', 'text.reponsetextuelle']
+      ['reponse.reponse-video', 'reponse.reponsetextuelle']
     > &
       Attribute.Required &
       Attribute.SetMinMax<
         {
+          min: 1;
           max: 1;
         },
         number

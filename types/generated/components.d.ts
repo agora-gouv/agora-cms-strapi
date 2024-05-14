@@ -1,19 +1,6 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface TextReponsetextuelle extends Schema.Component {
-  collectionName: 'components_text_reponsetextuelles';
-  info: {
-    displayName: 'reponseTextuelle';
-    icon: 'quote';
-    description: '';
-  };
-  attributes: {
-    label: Attribute.String & Attribute.Required;
-    text: Attribute.Text & Attribute.Required;
-  };
-}
-
-export interface VideoReponseVideo extends Schema.Component {
+export interface ReponseReponseVideo extends Schema.Component {
   collectionName: 'components_video_reponse_videos';
   info: {
     displayName: 'reponseVideo';
@@ -31,11 +18,24 @@ export interface VideoReponseVideo extends Schema.Component {
   };
 }
 
+export interface ReponseReponsetextuelle extends Schema.Component {
+  collectionName: 'components_text_reponsetextuelles';
+  info: {
+    displayName: 'reponseTextuelle';
+    icon: 'quote';
+    description: '';
+  };
+  attributes: {
+    label: Attribute.String & Attribute.Required;
+    text: Attribute.Text & Attribute.Required;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'text.reponsetextuelle': TextReponsetextuelle;
-      'video.reponse-video': VideoReponseVideo;
+      'reponse.reponse-video': ReponseReponseVideo;
+      'reponse.reponsetextuelle': ReponseReponsetextuelle;
     }
   }
 }
