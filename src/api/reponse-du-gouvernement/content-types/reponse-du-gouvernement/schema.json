@@ -31,8 +31,8 @@
     "reponseType": {
       "type": "dynamiczone",
       "components": [
-        "reponse.reponse-video",
-        "reponse.reponsetextuelle"
+        "reponse-qag.reponse-video",
+        "reponse-qag.reponsetextuelle"
       ],
       "required": true,
       "max": 1,

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_question_question_a_choix_multiples",
+  "info": {
+    "displayName": "question à choix multiples",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titre": {
+      "type": "string",
+      "required": true
+    },
+    "numero": {
+      "type": "integer",
+      "required": true
+    },
+    "choix": {
+      "type": "component",
+      "repeatable": true,
+      "component": "question-de-consultation.choix",
+      "required": true
+    },
+    "nombre_maximum_de_choix": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}

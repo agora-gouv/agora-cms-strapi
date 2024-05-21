@@ -1,0 +1,53 @@
+{
+  "collectionName": "components_consultation_contenu_de_consultations",
+  "info": {
+    "displayName": "Contenu de consultation"
+  },
+  "options": {},
+  "attributes": {
+    "libelle_sur_la_homepage": {
+      "type": "string",
+      "required": true
+    },
+    "libelle_sur_historique": {
+      "type": "string",
+      "required": true
+    },
+    "message_partage": {
+      "type": "string",
+      "required": true
+    },
+    "etape_historique": {
+      "type": "integer",
+      "required": true
+    },
+    "libelle_action_historique": {
+      "type": "string",
+      "required": true
+    },
+    "url_pdf_analyse": {
+      "type": "string",
+      "required": true
+    },
+    "titre_question_feedback": {
+      "type": "string",
+      "required": true
+    },
+    "description_question_feedback": {
+      "type": "blocks",
+      "required": true
+    },
+    "titre_pied_de_page": {
+      "type": "string",
+      "required": true
+    },
+    "description_pied_de_page": {
+      "type": "blocks",
+      "required": true
+    },
+    "message_information": {
+      "type": "blocks",
+      "required": true
+    }
+  }
+}

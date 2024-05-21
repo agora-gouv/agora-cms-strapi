@@ -362,53 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiReponseDuGouvernementReponseDuGouvernement
-  extends Schema.CollectionType {
-  collectionName: 'reponse_du_gouvernements';
-  info: {
-    singularName: 'reponse-du-gouvernement';
-    pluralName: 'reponse-du-gouvernements';
-    displayName: 'R\u00E9ponse du gouvernement';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    auteur: Attribute.String & Attribute.Required;
-    auteurPortraitUrl: Attribute.String & Attribute.Required;
-    reponseDate: Attribute.Date & Attribute.Required;
-    questionId: Attribute.String & Attribute.Required;
-    reponseType: Attribute.DynamicZone<
-      ['reponse.reponse-video', 'reponse.reponsetextuelle']
-    > &
-      Attribute.Required &
-      Attribute.SetMinMax<
-        {
-          min: 1;
-          max: 1;
-        },
-        number
-      >;
-    feedbackQuestion: Attribute.Text & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::reponse-du-gouvernement.reponse-du-gouvernement',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::reponse-du-gouvernement.reponse-du-gouvernement',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -835,6 +788,143 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiConsultationConsultation extends Schema.CollectionType {
+  collectionName: 'consultations';
+  info: {
+    singularName: 'consultation';
+    pluralName: 'consultations';
+    displayName: 'Consultation';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    titre: Attribute.String & Attribute.Required;
+    thematique: Attribute.Relation<
+      'api::consultation.consultation',
+      'oneToOne',
+      'api::thematique.thematique'
+    >;
+    date_de_debut: Attribute.Date & Attribute.Required;
+    date_de_fin: Attribute.Date & Attribute.Required;
+    url_image_de_couverture: Attribute.String & Attribute.Required;
+    url_image_page_de_contenu: Attribute.String & Attribute.Required;
+    nombre_de_questions: Attribute.Integer & Attribute.Required;
+    estimation_nombre_de_questions: Attribute.String & Attribute.Required;
+    estimation_temps: Attribute.String & Attribute.Required;
+    nombre_participants_cible: Attribute.Integer & Attribute.Required;
+    contenu_en_cours_questions_non_repondues: Attribute.Component<'consultation.contenu-de-consultation'> &
+      Attribute.Required;
+    contenu_en_cours_questions_repondues: Attribute.Component<'consultation.contenu-de-consultation'> &
+      Attribute.Required;
+    questions: Attribute.DynamicZone<
+      [
+        'question-de-consultation.description',
+        'question-de-consultation.question-a-choix-multiples',
+        'question-de-consultation.question-a-choix-unique',
+        'question-de-consultation.question-conditionnelle',
+        'question-de-consultation.question-ouverte'
+      ]
+    > &
+      Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::consultation.consultation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::consultation.consultation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiReponseDuGouvernementReponseDuGouvernement
+  extends Schema.CollectionType {
+  collectionName: 'reponse_du_gouvernements';
+  info: {
+    singularName: 'reponse-du-gouvernement';
+    pluralName: 'reponse-du-gouvernements';
+    displayName: 'R\u00E9ponse du gouvernement';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    auteur: Attribute.String & Attribute.Required;
+    auteurPortraitUrl: Attribute.String & Attribute.Required;
+    reponseDate: Attribute.Date & Attribute.Required;
+    questionId: Attribute.String & Attribute.Required;
+    reponseType: Attribute.DynamicZone<
+      ['reponse-qag.reponse-video', 'reponse-qag.reponsetextuelle']
+    > &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+          max: 1;
+        },
+        number
+      >;
+    feedbackQuestion: Attribute.Text & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::reponse-du-gouvernement.reponse-du-gouvernement',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::reponse-du-gouvernement.reponse-du-gouvernement',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiThematiqueThematique extends Schema.CollectionType {
+  collectionName: 'thematiques';
+  info: {
+    singularName: 'thematique';
+    pluralName: 'thematiques';
+    displayName: 'Th\u00E9matique';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    label: Attribute.String & Attribute.Required;
+    pictogramme: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::thematique.thematique',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::thematique.thematique',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -845,7 +935,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::reponse-du-gouvernement.reponse-du-gouvernement': ApiReponseDuGouvernementReponseDuGouvernement;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -854,6 +943,9 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::consultation.consultation': ApiConsultationConsultation;
+      'api::reponse-du-gouvernement.reponse-du-gouvernement': ApiReponseDuGouvernementReponseDuGouvernement;
+      'api::thematique.thematique': ApiThematiqueThematique;
     }
   }
 }

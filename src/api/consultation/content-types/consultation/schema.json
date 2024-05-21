@@ -1,0 +1,80 @@
+{
+  "kind": "collectionType",
+  "collectionName": "consultations",
+  "info": {
+    "singularName": "consultation",
+    "pluralName": "consultations",
+    "displayName": "Consultation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titre": {
+      "type": "string",
+      "required": true
+    },
+    "thematique": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::thematique.thematique"
+    },
+    "date_de_debut": {
+      "type": "date",
+      "required": true
+    },
+    "date_de_fin": {
+      "type": "date",
+      "required": true
+    },
+    "url_image_de_couverture": {
+      "type": "string",
+      "required": true
+    },
+    "url_image_page_de_contenu": {
+      "type": "string",
+      "required": true
+    },
+    "nombre_de_questions": {
+      "type": "integer",
+      "required": true
+    },
+    "estimation_nombre_de_questions": {
+      "type": "string",
+      "required": true
+    },
+    "estimation_temps": {
+      "type": "string",
+      "required": true
+    },
+    "nombre_participants_cible": {
+      "type": "integer",
+      "required": true
+    },
+    "contenu_en_cours_questions_non_repondues": {
+      "type": "component",
+      "repeatable": false,
+      "component": "consultation.contenu-de-consultation",
+      "required": true
+    },
+    "contenu_en_cours_questions_repondues": {
+      "type": "component",
+      "repeatable": false,
+      "component": "consultation.contenu-de-consultation",
+      "required": true
+    },
+    "questions": {
+      "type": "dynamiczone",
+      "components": [
+        "question-de-consultation.description",
+        "question-de-consultation.question-a-choix-multiples",
+        "question-de-consultation.question-a-choix-unique",
+        "question-de-consultation.question-conditionnelle",
+        "question-de-consultation.question-ouverte"
+      ],
+      "required": true
+    }
+  }
+}

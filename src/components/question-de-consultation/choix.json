@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_question_choixes",
+  "info": {
+    "displayName": "choix",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    }
+  }
+}
