@@ -937,13 +937,13 @@ export interface ApiConsultationAvantReponseConsultationAvantReponse
     singularName: 'consultation-avant-reponse';
     pluralName: 'consultations-avant-reponse';
     displayName: 'Consultation - Contenu avant r\u00E9ponse';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     template_partage: Attribute.String & Attribute.Required;
-    liste_objectifs: Attribute.Text & Attribute.Required;
     historique_titre: Attribute.String & Attribute.Required;
     historique_call_to_action: Attribute.String & Attribute.Required;
     historique_type: Attribute.Enumeration<
@@ -961,6 +961,7 @@ export interface ApiConsultationAvantReponseConsultationAvantReponse
       ]
     > &
       Attribute.Required;
+    liste_objectifs: Attribute.Blocks;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

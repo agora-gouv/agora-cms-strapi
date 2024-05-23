@@ -4,7 +4,8 @@
   "info": {
     "singularName": "consultation-avant-reponse",
     "pluralName": "consultations-avant-reponse",
-    "displayName": "Consultation - Contenu avant réponse"
+    "displayName": "Consultation - Contenu avant réponse",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,10 +14,6 @@
   "attributes": {
     "template_partage": {
       "type": "string",
-      "required": true
-    },
-    "liste_objectifs": {
-      "type": "text",
       "required": true
     },
     "historique_titre": {
@@ -46,6 +43,10 @@
         "consultation-section.section-video"
       ],
       "required": true
+    },
+    "liste_objectifs": {
+      "type": "blocks",
+      "required": false
     }
   }
 }
