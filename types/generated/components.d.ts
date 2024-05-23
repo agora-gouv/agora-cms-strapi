@@ -74,24 +74,6 @@ export interface ConsultationSectionSectionVideo extends Schema.Component {
   };
 }
 
-export interface ConsultationContenuDeConsultation extends Schema.Component {
-  collectionName: 'components_consultation_contenu_de_consultations';
-  info: {
-    displayName: 'Contenu de consultation';
-    description: '';
-  };
-  attributes: {
-    libelle_sur_la_homepage: Attribute.String & Attribute.Required;
-    libelle_sur_historique: Attribute.String & Attribute.Required;
-    message_partage: Attribute.String & Attribute.Required;
-    etape_historique: Attribute.Integer & Attribute.Required;
-    libelle_action_historique: Attribute.String & Attribute.Required;
-    url_pdf_analyse: Attribute.String & Attribute.Required;
-    message_information: Attribute.Blocks & Attribute.Required;
-    objectif: Attribute.Blocks & Attribute.Required;
-  };
-}
-
 export interface QuestionDeConsultationChoixConditionnel
   extends Schema.Component {
   collectionName: 'components_question_choix_conditionnels';
@@ -236,7 +218,6 @@ declare module '@strapi/types' {
       'consultation-section.section-texte-riche': ConsultationSectionSectionTexteRiche;
       'consultation-section.section-titre': ConsultationSectionSectionTitre;
       'consultation-section.section-video': ConsultationSectionSectionVideo;
-      'consultation.contenu-de-consultation': ConsultationContenuDeConsultation;
       'question-de-consultation.choix-conditionnel': QuestionDeConsultationChoixConditionnel;
       'question-de-consultation.choix': QuestionDeConsultationChoix;
       'question-de-consultation.description': QuestionDeConsultationDescription;

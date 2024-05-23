@@ -814,10 +814,6 @@ export interface ApiConsultationConsultation extends Schema.CollectionType {
     estimation_nombre_de_questions: Attribute.String & Attribute.Required;
     estimation_temps: Attribute.String & Attribute.Required;
     nombre_participants_cible: Attribute.Integer & Attribute.Required;
-    contenu_en_cours_questions_non_repondues: Attribute.Component<'consultation.contenu-de-consultation'> &
-      Attribute.Required;
-    contenu_en_cours_questions_repondues_ou_terminees: Attribute.Component<'consultation.contenu-de-consultation'> &
-      Attribute.Required;
     questions: Attribute.DynamicZone<
       [
         'question-de-consultation.description',
@@ -828,6 +824,26 @@ export interface ApiConsultationConsultation extends Schema.CollectionType {
       ]
     > &
       Attribute.Required;
+    consultation_avant_reponse: Attribute.Relation<
+      'api::consultation.consultation',
+      'oneToOne',
+      'api::consultation-avant-reponse.consultation-avant-reponse'
+    >;
+    consultation_apres_reponse_ou_terminee: Attribute.Relation<
+      'api::consultation.consultation',
+      'oneToOne',
+      'api::consultation-apres-reponse-ou-terminee.consultation-apres-reponse-ou-terminee'
+    >;
+    consultation_contenu_autres: Attribute.Relation<
+      'api::consultation.consultation',
+      'oneToMany',
+      'api::consultation-contenu-autre.consultation-contenu-autre'
+    >;
+    consultation_contenu_a_venir: Attribute.Relation<
+      'api::consultation.consultation',
+      'oneToOne',
+      'api::consultation-contenu-a-venir.consultation-contenu-a-venir'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -839,6 +855,212 @@ export interface ApiConsultationConsultation extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::consultation.consultation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiConsultationApresReponseOuTermineeConsultationApresReponseOuTerminee
+  extends Schema.CollectionType {
+  collectionName: 'consultation_apres_reponse_ou_terminees';
+  info: {
+    singularName: 'consultation-apres-reponse-ou-terminee';
+    pluralName: 'consultation-apres-reponse-ou-terminees';
+    displayName: 'Consultation - Contenu apr\u00E8s r\u00E9ponse ou termin\u00E9e';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    template_partage_avant_fin_consultation: Attribute.String &
+      Attribute.Required;
+    encart_visualisation_resultat_avant_fin_consultation_pictogramme: Attribute.String &
+      Attribute.Required;
+    encart_visualisation_resultat_avant_fin_consultation_description: Attribute.Blocks &
+      Attribute.Required;
+    encart_visualisation_resultat_avant_fin_consultation_call_to_action: Attribute.String &
+      Attribute.Required;
+    template_partage_apres_fin_consultation: Attribute.String &
+      Attribute.Required;
+    encart_visualisation_resultat_apres_fin_consultation_pictogramme: Attribute.String &
+      Attribute.Required;
+    encart_visualisation_resultat_apres_fin_consultation_description: Attribute.Blocks &
+      Attribute.Required;
+    encart_visualisation_resultat_apres_fin_consultation_call_to_action: Attribute.String &
+      Attribute.Required;
+    footer_titre: Attribute.String & Attribute.Required;
+    footer_description: Attribute.Blocks & Attribute.Required;
+    feedback_pictogramme: Attribute.String & Attribute.Required;
+    feedback_titre: Attribute.String & Attribute.Required;
+    feedback_description: Attribute.Blocks & Attribute.Required;
+    historique_titre: Attribute.String & Attribute.Required;
+    historique_call_to_action: Attribute.String & Attribute.Required;
+    historique_type: Attribute.Enumeration<
+      ['contenu', 'r\u00E9ponse et pourcentage']
+    > &
+      Attribute.Required;
+    sections: Attribute.DynamicZone<
+      [
+        'consultation-section.section-chiffre',
+        'consultation-section.section-citation',
+        'consultation-section.section-image',
+        'consultation-section.section-texte-riche',
+        'consultation-section.section-titre',
+        'consultation-section.section-video'
+      ]
+    > &
+      Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::consultation-apres-reponse-ou-terminee.consultation-apres-reponse-ou-terminee',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::consultation-apres-reponse-ou-terminee.consultation-apres-reponse-ou-terminee',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiConsultationAvantReponseConsultationAvantReponse
+  extends Schema.CollectionType {
+  collectionName: 'consultations_avant_reponse';
+  info: {
+    singularName: 'consultation-avant-reponse';
+    pluralName: 'consultations-avant-reponse';
+    displayName: 'Consultation - Contenu avant r\u00E9ponse';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    template_partage: Attribute.String & Attribute.Required;
+    liste_objectifs: Attribute.Text & Attribute.Required;
+    historique_titre: Attribute.String & Attribute.Required;
+    historique_call_to_action: Attribute.String & Attribute.Required;
+    historique_type: Attribute.Enumeration<
+      ['contenu', 'r\u00E9ponse et pourcentage']
+    > &
+      Attribute.Required;
+    sections: Attribute.DynamicZone<
+      [
+        'consultation-section.section-chiffre',
+        'consultation-section.section-citation',
+        'consultation-section.section-image',
+        'consultation-section.section-texte-riche',
+        'consultation-section.section-titre',
+        'consultation-section.section-video'
+      ]
+    > &
+      Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::consultation-avant-reponse.consultation-avant-reponse',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::consultation-avant-reponse.consultation-avant-reponse',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiConsultationContenuAVenirConsultationContenuAVenir
+  extends Schema.CollectionType {
+  collectionName: 'consultation_contenus_a_venir';
+  info: {
+    singularName: 'consultation-contenu-a-venir';
+    pluralName: 'consultation-contenus-a-venir';
+    displayName: 'Consultation - Contenu \u00E0 venir';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    titre_historique: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::consultation-contenu-a-venir.consultation-contenu-a-venir',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::consultation-contenu-a-venir.consultation-contenu-a-venir',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiConsultationContenuAutreConsultationContenuAutre
+  extends Schema.CollectionType {
+  collectionName: 'consultations_contenu_autre';
+  info: {
+    singularName: 'consultation-contenu-autre';
+    pluralName: 'consultations-contenu-autre';
+    displayName: 'Consultation - Contenu autre';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    message_mise_a_jour: Attribute.String & Attribute.Required;
+    lien_telechargement_analyse: Attribute.String & Attribute.Required;
+    template_partage: Attribute.String & Attribute.Required;
+    header_titre: Attribute.String & Attribute.Required;
+    header_description: Attribute.Blocks & Attribute.Required;
+    footer_titre: Attribute.String & Attribute.Required;
+    footer_description: Attribute.Blocks & Attribute.Required;
+    feedback_pictogramme: Attribute.String & Attribute.Required;
+    feedback_titre: Attribute.String & Attribute.Required;
+    feedback_description: Attribute.Blocks & Attribute.Required;
+    date_publication: Attribute.Date & Attribute.Required;
+    sections: Attribute.DynamicZone<
+      [
+        'consultation-section.section-chiffre',
+        'consultation-section.section-citation',
+        'consultation-section.section-image',
+        'consultation-section.section-texte-riche',
+        'consultation-section.section-titre',
+        'consultation-section.section-video'
+      ]
+    >;
+    historique_titre: Attribute.String & Attribute.Required;
+    historique_call_to_action: Attribute.String & Attribute.Required;
+    historique_type: Attribute.Enumeration<
+      ['contenu', 'r\u00E9ponse et pourcentage']
+    > &
+      Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::consultation-contenu-autre.consultation-contenu-autre',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::consultation-contenu-autre.consultation-contenu-autre',
       'oneToOne',
       'admin::user'
     > &
@@ -944,6 +1166,10 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::consultation.consultation': ApiConsultationConsultation;
+      'api::consultation-apres-reponse-ou-terminee.consultation-apres-reponse-ou-terminee': ApiConsultationApresReponseOuTermineeConsultationApresReponseOuTerminee;
+      'api::consultation-avant-reponse.consultation-avant-reponse': ApiConsultationAvantReponseConsultationAvantReponse;
+      'api::consultation-contenu-a-venir.consultation-contenu-a-venir': ApiConsultationContenuAVenirConsultationContenuAVenir;
+      'api::consultation-contenu-autre.consultation-contenu-autre': ApiConsultationContenuAutreConsultationContenuAutre;
       'api::reponse-du-gouvernement.reponse-du-gouvernement': ApiReponseDuGouvernementReponseDuGouvernement;
       'api::thematique.thematique': ApiThematiqueThematique;
     }

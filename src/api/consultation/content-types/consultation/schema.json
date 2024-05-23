@@ -53,18 +53,6 @@
       "type": "integer",
       "required": true
     },
-    "contenu_en_cours_questions_non_repondues": {
-      "type": "component",
-      "repeatable": false,
-      "component": "consultation.contenu-de-consultation",
-      "required": true
-    },
-    "contenu_en_cours_questions_repondues_ou_terminees": {
-      "type": "component",
-      "repeatable": false,
-      "component": "consultation.contenu-de-consultation",
-      "required": true
-    },
     "questions": {
       "type": "dynamiczone",
       "components": [
@@ -75,6 +63,26 @@
         "question-de-consultation.question-ouverte"
       ],
       "required": true
+    },
+    "consultation_avant_reponse": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::consultation-avant-reponse.consultation-avant-reponse"
+    },
+    "consultation_apres_reponse_ou_terminee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::consultation-apres-reponse-ou-terminee.consultation-apres-reponse-ou-terminee"
+    },
+    "consultation_contenu_autres": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::consultation-contenu-autre.consultation-contenu-autre"
+    },
+    "consultation_contenu_a_venir": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::consultation-contenu-a-venir.consultation-contenu-a-venir"
     }
   }
 }

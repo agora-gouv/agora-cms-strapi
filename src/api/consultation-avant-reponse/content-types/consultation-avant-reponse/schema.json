@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "consultations_avant_reponse",
+  "info": {
+    "singularName": "consultation-avant-reponse",
+    "pluralName": "consultations-avant-reponse",
+    "displayName": "Consultation - Contenu avant réponse"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "template_partage": {
+      "type": "string",
+      "required": true
+    },
+    "liste_objectifs": {
+      "type": "text",
+      "required": true
+    },
+    "historique_titre": {
+      "type": "string",
+      "required": true
+    },
+    "historique_call_to_action": {
+      "type": "string",
+      "required": true
+    },
+    "historique_type": {
+      "type": "enumeration",
+      "enum": [
+        "contenu",
+        "réponse et pourcentage"
+      ],
+      "required": true
+    },
+    "sections": {
+      "type": "dynamiczone",
+      "components": [
+        "consultation-section.section-chiffre",
+        "consultation-section.section-citation",
+        "consultation-section.section-image",
+        "consultation-section.section-texte-riche",
+        "consultation-section.section-titre",
+        "consultation-section.section-video"
+      ],
+      "required": true
+    }
+  }
+}
