@@ -59,7 +59,7 @@
       "component": "consultation.contenu-de-consultation",
       "required": true
     },
-    "contenu_en_cours_questions_repondues": {
+    "contenu_en_cours_questions_repondues_ou_terminees": {
       "type": "component",
       "repeatable": false,
       "component": "consultation.contenu-de-consultation",

@@ -13,6 +13,9 @@
     "numero": {
       "type": "integer",
       "required": true
+    },
+    "popup_explication": {
+      "type": "blocks"
     }
   }
 }

@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_consultation_section_section_videos",
+  "info": {
+    "displayName": "Section vidéo",
+    "icon": "play"
+  },
+  "options": {},
+  "attributes": {
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "largeur": {
+      "type": "integer",
+      "required": true
+    },
+    "hauteur": {
+      "type": "integer",
+      "required": true
+    },
+    "nom_auteur": {
+      "type": "string",
+      "required": true
+    },
+    "poste_auteur": {
+      "type": "string",
+      "required": true
+    },
+    "date_tournage": {
+      "type": "date",
+      "required": true
+    },
+    "transcription": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

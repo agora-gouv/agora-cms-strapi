@@ -20,6 +20,9 @@
       "repeatable": true,
       "component": "question-de-consultation.choix-conditionnel",
       "required": true
+    },
+    "popup_explication": {
+      "type": "blocks"
     }
   }
 }

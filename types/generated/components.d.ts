@@ -1,9 +1,84 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface ConsultationSectionSectionChiffre extends Schema.Component {
+  collectionName: 'components_consultation_section_section_chiffres';
+  info: {
+    displayName: 'Section chiffre';
+    icon: 'plus';
+  };
+  attributes: {
+    titre: Attribute.String & Attribute.Required;
+    description: Attribute.Blocks & Attribute.Required;
+  };
+}
+
+export interface ConsultationSectionSectionCitation extends Schema.Component {
+  collectionName: 'components_consultation_section_section_citations';
+  info: {
+    displayName: 'Section citation';
+    icon: 'quote';
+  };
+  attributes: {
+    description: Attribute.Blocks & Attribute.Required;
+  };
+}
+
+export interface ConsultationSectionSectionImage extends Schema.Component {
+  collectionName: 'components_consultation_section_section_images';
+  info: {
+    displayName: 'Section image';
+    icon: 'picture';
+  };
+  attributes: {
+    url: Attribute.String & Attribute.Required;
+    description_accessible_de_l_image: Attribute.Text & Attribute.Required;
+  };
+}
+
+export interface ConsultationSectionSectionTexteRiche extends Schema.Component {
+  collectionName: 'components_consultation_section_section_texte_riches';
+  info: {
+    displayName: 'Section texte riche';
+    icon: 'file';
+  };
+  attributes: {
+    description: Attribute.Blocks & Attribute.Required;
+  };
+}
+
+export interface ConsultationSectionSectionTitre extends Schema.Component {
+  collectionName: 'components_consultation_section_section_titres';
+  info: {
+    displayName: 'Section titre';
+    icon: 'underline';
+  };
+  attributes: {
+    titre: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface ConsultationSectionSectionVideo extends Schema.Component {
+  collectionName: 'components_consultation_section_section_videos';
+  info: {
+    displayName: 'Section vid\u00E9o';
+    icon: 'play';
+  };
+  attributes: {
+    url: Attribute.String & Attribute.Required;
+    largeur: Attribute.Integer & Attribute.Required;
+    hauteur: Attribute.Integer & Attribute.Required;
+    nom_auteur: Attribute.String & Attribute.Required;
+    poste_auteur: Attribute.String & Attribute.Required;
+    date_tournage: Attribute.Date & Attribute.Required;
+    transcription: Attribute.Text & Attribute.Required;
+  };
+}
+
 export interface ConsultationContenuDeConsultation extends Schema.Component {
   collectionName: 'components_consultation_contenu_de_consultations';
   info: {
     displayName: 'Contenu de consultation';
+    description: '';
   };
   attributes: {
     libelle_sur_la_homepage: Attribute.String & Attribute.Required;
@@ -12,11 +87,8 @@ export interface ConsultationContenuDeConsultation extends Schema.Component {
     etape_historique: Attribute.Integer & Attribute.Required;
     libelle_action_historique: Attribute.String & Attribute.Required;
     url_pdf_analyse: Attribute.String & Attribute.Required;
-    titre_question_feedback: Attribute.String & Attribute.Required;
-    description_question_feedback: Attribute.Blocks & Attribute.Required;
-    titre_pied_de_page: Attribute.String & Attribute.Required;
-    description_pied_de_page: Attribute.Blocks & Attribute.Required;
     message_information: Attribute.Blocks & Attribute.Required;
+    objectif: Attribute.Blocks & Attribute.Required;
   };
 }
 
@@ -30,6 +102,7 @@ export interface QuestionDeConsultationChoixConditionnel
   attributes: {
     label: Attribute.String & Attribute.Required;
     numero_de_la_question_suivante: Attribute.Integer & Attribute.Required;
+    ouvert: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
   };
 }
 
@@ -41,6 +114,7 @@ export interface QuestionDeConsultationChoix extends Schema.Component {
   };
   attributes: {
     label: Attribute.String;
+    ouvert: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
   };
 }
 
@@ -70,6 +144,7 @@ export interface QuestionDeConsultationQuestionAChoixMultiples
     choix: Attribute.Component<'question-de-consultation.choix', true> &
       Attribute.Required;
     nombre_maximum_de_choix: Attribute.Integer & Attribute.Required;
+    popup_explication: Attribute.Blocks;
   };
 }
 
@@ -84,6 +159,7 @@ export interface QuestionDeConsultationQuestionAChoixUnique
     titre: Attribute.String & Attribute.Required;
     numero: Attribute.Integer & Attribute.Required;
     choix: Attribute.Component<'question-de-consultation.choix', true>;
+    popup_explication: Attribute.Blocks;
   };
 }
 
@@ -102,6 +178,7 @@ export interface QuestionDeConsultationQuestionConditionnelle
       true
     > &
       Attribute.Required;
+    popup_explication: Attribute.Blocks;
   };
 }
 
@@ -115,6 +192,7 @@ export interface QuestionDeConsultationQuestionOuverte
   attributes: {
     titre: Attribute.String & Attribute.Required;
     numero: Attribute.Integer & Attribute.Required;
+    popup_explication: Attribute.Blocks;
   };
 }
 
@@ -152,6 +230,12 @@ export interface ReponseQagReponsetextuelle extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'consultation-section.section-chiffre': ConsultationSectionSectionChiffre;
+      'consultation-section.section-citation': ConsultationSectionSectionCitation;
+      'consultation-section.section-image': ConsultationSectionSectionImage;
+      'consultation-section.section-texte-riche': ConsultationSectionSectionTexteRiche;
+      'consultation-section.section-titre': ConsultationSectionSectionTitre;
+      'consultation-section.section-video': ConsultationSectionSectionVideo;
       'consultation.contenu-de-consultation': ConsultationContenuDeConsultation;
       'question-de-consultation.choix-conditionnel': QuestionDeConsultationChoixConditionnel;
       'question-de-consultation.choix': QuestionDeConsultationChoix;

@@ -23,6 +23,9 @@
     "nombre_maximum_de_choix": {
       "type": "integer",
       "required": true
+    },
+    "popup_explication": {
+      "type": "blocks"
     }
   }
 }

@@ -13,6 +13,11 @@
     "numero_de_la_question_suivante": {
       "type": "integer",
       "required": true
+    },
+    "ouvert": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }

@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_consultation_section_section_citations",
+  "info": {
+    "displayName": "Section citation",
+    "icon": "quote"
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "blocks",
+      "required": true
+    }
+  }
+}

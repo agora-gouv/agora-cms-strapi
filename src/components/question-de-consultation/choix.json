@@ -8,6 +8,11 @@
   "attributes": {
     "label": {
       "type": "string"
+    },
+    "ouvert": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }

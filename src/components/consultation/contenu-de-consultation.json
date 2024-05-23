@@ -1,7 +1,8 @@
 {
   "collectionName": "components_consultation_contenu_de_consultations",
   "info": {
-    "displayName": "Contenu de consultation"
+    "displayName": "Contenu de consultation",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -29,23 +30,11 @@
       "type": "string",
       "required": true
     },
-    "titre_question_feedback": {
-      "type": "string",
-      "required": true
-    },
-    "description_question_feedback": {
-      "type": "blocks",
-      "required": true
-    },
-    "titre_pied_de_page": {
-      "type": "string",
-      "required": true
-    },
-    "description_pied_de_page": {
-      "type": "blocks",
-      "required": true
-    },
     "message_information": {
+      "type": "blocks",
+      "required": true
+    },
+    "objectif": {
       "type": "blocks",
       "required": true
     }

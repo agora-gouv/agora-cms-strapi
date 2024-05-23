@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_consultation_section_section_titres",
+  "info": {
+    "displayName": "Section titre",
+    "icon": "underline"
+  },
+  "options": {},
+  "attributes": {
+    "titre": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

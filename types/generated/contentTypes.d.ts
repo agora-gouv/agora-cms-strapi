@@ -816,7 +816,7 @@ export interface ApiConsultationConsultation extends Schema.CollectionType {
     nombre_participants_cible: Attribute.Integer & Attribute.Required;
     contenu_en_cours_questions_non_repondues: Attribute.Component<'consultation.contenu-de-consultation'> &
       Attribute.Required;
-    contenu_en_cours_questions_repondues: Attribute.Component<'consultation.contenu-de-consultation'> &
+    contenu_en_cours_questions_repondues_ou_terminees: Attribute.Component<'consultation.contenu-de-consultation'> &
       Attribute.Required;
     questions: Attribute.DynamicZone<
       [

@@ -19,6 +19,9 @@
       "type": "component",
       "repeatable": true,
       "component": "question-de-consultation.choix"
+    },
+    "popup_explication": {
+      "type": "blocks"
     }
   }
 }
