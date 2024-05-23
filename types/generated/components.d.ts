@@ -225,8 +225,8 @@ declare module '@strapi/types' {
       'question-de-consultation.question-a-choix-unique': QuestionDeConsultationQuestionAChoixUnique;
       'question-de-consultation.question-conditionnelle': QuestionDeConsultationQuestionConditionnelle;
       'question-de-consultation.question-ouverte': QuestionDeConsultationQuestionOuverte;
-      'reponse-qag.reponse-video': ReponseQagReponseVideo;
-      'reponse-qag.reponsetextuelle': ReponseQagReponsetextuelle;
+      'reponse.reponse-video': ReponseQagReponseVideo;
+      'reponse.reponsetextuelle': ReponseQagReponsetextuelle;
     }
   }
 }

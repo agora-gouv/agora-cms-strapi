@@ -1087,7 +1087,7 @@ export interface ApiReponseDuGouvernementReponseDuGouvernement
     reponseDate: Attribute.Date & Attribute.Required;
     questionId: Attribute.String & Attribute.Required;
     reponseType: Attribute.DynamicZone<
-      ['reponse-qag.reponse-video', 'reponse-qag.reponsetextuelle']
+      ['reponse.reponse-video', 'reponse.reponsetextuelle']
     > &
       Attribute.Required &
       Attribute.SetMinMax<
