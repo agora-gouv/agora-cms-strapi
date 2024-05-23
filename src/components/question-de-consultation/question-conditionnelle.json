@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_question_question_conditionnelles",
+  "info": {
+    "displayName": "Question conditionnelle",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titre": {
+      "type": "string",
+      "required": true
+    },
+    "numero": {
+      "type": "integer",
+      "required": true
+    },
+    "choix": {
+      "displayName": "Choix conditionnel",
+      "type": "component",
+      "repeatable": true,
+      "component": "question-de-consultation.choix-conditionnel",
+      "required": true
+    },
+    "popup_explication": {
+      "type": "blocks"
+    }
+  }
+}

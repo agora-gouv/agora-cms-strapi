@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_consultation_section_section_images",
+  "info": {
+    "displayName": "Section image",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "description_accessible_de_l_image": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

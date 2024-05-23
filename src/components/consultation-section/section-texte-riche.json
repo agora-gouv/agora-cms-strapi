@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_consultation_section_section_texte_riches",
+  "info": {
+    "displayName": "Section texte riche",
+    "icon": "file"
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "blocks",
+      "required": true
+    }
+  }
+}

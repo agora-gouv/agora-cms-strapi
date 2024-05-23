@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_question_question_ouvertes",
+  "info": {
+    "displayName": "question ouverte",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titre": {
+      "type": "string",
+      "required": true
+    },
+    "numero": {
+      "type": "integer",
+      "required": true
+    },
+    "popup_explication": {
+      "type": "blocks"
+    }
+  }
+}

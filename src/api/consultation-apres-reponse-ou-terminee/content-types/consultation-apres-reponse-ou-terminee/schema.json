@@ -1,0 +1,95 @@
+{
+  "kind": "collectionType",
+  "collectionName": "consultation_apres_reponse_ou_terminees",
+  "info": {
+    "singularName": "consultation-apres-reponse-ou-terminee",
+    "pluralName": "consultation-apres-reponse-ou-terminees",
+    "displayName": "Consultation - Contenu après réponse ou terminée"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "template_partage_avant_fin_consultation": {
+      "type": "string",
+      "required": true
+    },
+    "encart_visualisation_resultat_avant_fin_consultation_pictogramme": {
+      "type": "string",
+      "required": true
+    },
+    "encart_visualisation_resultat_avant_fin_consultation_description": {
+      "type": "blocks",
+      "required": true
+    },
+    "encart_visualisation_resultat_avant_fin_consultation_call_to_action": {
+      "type": "string",
+      "required": true
+    },
+    "template_partage_apres_fin_consultation": {
+      "type": "string",
+      "required": true
+    },
+    "encart_visualisation_resultat_apres_fin_consultation_pictogramme": {
+      "type": "string",
+      "required": true
+    },
+    "encart_visualisation_resultat_apres_fin_consultation_description": {
+      "type": "blocks",
+      "required": true
+    },
+    "encart_visualisation_resultat_apres_fin_consultation_call_to_action": {
+      "type": "string",
+      "required": true
+    },
+    "footer_titre": {
+      "type": "string",
+      "required": true
+    },
+    "footer_description": {
+      "type": "blocks",
+      "required": true
+    },
+    "feedback_pictogramme": {
+      "type": "string",
+      "required": true
+    },
+    "feedback_titre": {
+      "type": "string",
+      "required": true
+    },
+    "feedback_description": {
+      "type": "blocks",
+      "required": true
+    },
+    "historique_titre": {
+      "type": "string",
+      "required": true
+    },
+    "historique_call_to_action": {
+      "type": "string",
+      "required": true
+    },
+    "historique_type": {
+      "type": "enumeration",
+      "enum": [
+        "contenu",
+        "réponse et pourcentage"
+      ],
+      "required": true
+    },
+    "sections": {
+      "type": "dynamiczone",
+      "components": [
+        "consultation-section.section-chiffre",
+        "consultation-section.section-citation",
+        "consultation-section.section-image",
+        "consultation-section.section-texte-riche",
+        "consultation-section.section-titre",
+        "consultation-section.section-video"
+      ],
+      "required": true
+    }
+  }
+}

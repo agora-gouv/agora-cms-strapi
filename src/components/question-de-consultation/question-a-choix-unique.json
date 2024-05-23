@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_question_question_a_choix_uniques",
+  "info": {
+    "displayName": "question à choix unique",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titre": {
+      "type": "string",
+      "required": true
+    },
+    "numero": {
+      "type": "integer",
+      "required": true
+    },
+    "choix": {
+      "displayName": "choix",
+      "type": "component",
+      "repeatable": true,
+      "component": "question-de-consultation.choix"
+    },
+    "popup_explication": {
+      "type": "blocks"
+    }
+  }
+}

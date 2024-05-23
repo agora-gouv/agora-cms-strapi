@@ -1,0 +1,88 @@
+{
+  "kind": "collectionType",
+  "collectionName": "consultations",
+  "info": {
+    "singularName": "consultation",
+    "pluralName": "consultations",
+    "displayName": "Consultation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titre": {
+      "type": "string",
+      "required": true
+    },
+    "thematique": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::thematique.thematique"
+    },
+    "date_de_debut": {
+      "type": "date",
+      "required": true
+    },
+    "date_de_fin": {
+      "type": "date",
+      "required": true
+    },
+    "url_image_de_couverture": {
+      "type": "string",
+      "required": true
+    },
+    "url_image_page_de_contenu": {
+      "type": "string",
+      "required": true
+    },
+    "nombre_de_questions": {
+      "type": "integer",
+      "required": true
+    },
+    "estimation_nombre_de_questions": {
+      "type": "string",
+      "required": true
+    },
+    "estimation_temps": {
+      "type": "string",
+      "required": true
+    },
+    "nombre_participants_cible": {
+      "type": "integer",
+      "required": true
+    },
+    "questions": {
+      "type": "dynamiczone",
+      "components": [
+        "question-de-consultation.description",
+        "question-de-consultation.question-a-choix-multiples",
+        "question-de-consultation.question-a-choix-unique",
+        "question-de-consultation.question-conditionnelle",
+        "question-de-consultation.question-ouverte"
+      ],
+      "required": true
+    },
+    "consultation_avant_reponse": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::consultation-avant-reponse.consultation-avant-reponse"
+    },
+    "consultation_apres_reponse_ou_terminee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::consultation-apres-reponse-ou-terminee.consultation-apres-reponse-ou-terminee"
+    },
+    "consultation_contenu_autres": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::consultation-contenu-autre.consultation-contenu-autre"
+    },
+    "consultation_contenu_a_venir": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::consultation-contenu-a-venir.consultation-contenu-a-venir"
+    }
+  }
+}
