@@ -1025,7 +1025,7 @@ export interface ApiConsultationContenuAutreConsultationContenuAutre
   };
   attributes: {
     message_mise_a_jour: Attribute.String & Attribute.Required;
-    lien_telechargement_analyse: Attribute.String & Attribute.Required;
+    lien_telechargement_analyse: Attribute.String;
     template_partage: Attribute.String & Attribute.Required;
     header_titre: Attribute.String & Attribute.Required;
     header_description: Attribute.Blocks & Attribute.Required;
