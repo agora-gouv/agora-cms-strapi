@@ -178,7 +178,7 @@ export interface QuestionDeConsultationQuestionOuverte
   };
 }
 
-export interface ReponseQagReponseVideo extends Schema.Component {
+export interface ReponseReponseVideo extends Schema.Component {
   collectionName: 'components_video_reponse_videos';
   info: {
     displayName: 'reponseVideo';
@@ -196,7 +196,7 @@ export interface ReponseQagReponseVideo extends Schema.Component {
   };
 }
 
-export interface ReponseQagReponsetextuelle extends Schema.Component {
+export interface ReponseReponsetextuelle extends Schema.Component {
   collectionName: 'components_text_reponsetextuelles';
   info: {
     displayName: 'reponseTextuelle';
@@ -225,8 +225,8 @@ declare module '@strapi/types' {
       'question-de-consultation.question-a-choix-unique': QuestionDeConsultationQuestionAChoixUnique;
       'question-de-consultation.question-conditionnelle': QuestionDeConsultationQuestionConditionnelle;
       'question-de-consultation.question-ouverte': QuestionDeConsultationQuestionOuverte;
-      'reponse.reponse-video': ReponseQagReponseVideo;
-      'reponse.reponsetextuelle': ReponseQagReponsetextuelle;
+      'reponse.reponse-video': ReponseReponseVideo;
+      'reponse.reponsetextuelle': ReponseReponsetextuelle;
     }
   }
 }
