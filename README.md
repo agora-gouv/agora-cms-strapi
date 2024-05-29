@@ -19,3 +19,4 @@ FAQ
 Bon à savoir : 
 
 - Postgres ne gère pas les noms de table à ralonge donc nous sommes limités dans notre nommage de tables ou de colonnes à 63 caractères sur Strapi
+- pour changer le type d'un champs, il vaut mieux changer le nom pour ne pas créer d'incohérence en base (du texte pas formaté dans un richtext par exemple) et empêcher le serveur de démarrer en dev/local
