@@ -23,14 +23,14 @@
       "type": "integer",
       "required": true
     },
-    "transcription": {
-      "type": "blocks"
-    },
     "informationAdditionnelleTitre": {
       "type": "string"
     },
-    "informationAdditionnelleDescription": {
+    "transcription": {
       "type": "text"
+    },
+    "informationAdditionnelleDescription": {
+      "type": "blocks"
     }
   }
 }

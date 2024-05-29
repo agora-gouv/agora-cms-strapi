@@ -190,9 +190,9 @@ export interface ReponseReponseVideo extends Schema.Component {
     urlVideo: Attribute.String & Attribute.Required;
     videoWidth: Attribute.Integer & Attribute.Required;
     videoHeight: Attribute.Integer & Attribute.Required;
-    transcription: Attribute.Blocks;
     informationAdditionnelleTitre: Attribute.String;
-    informationAdditionnelleDescription: Attribute.Text;
+    transcription: Attribute.Text;
+    informationAdditionnelleDescription: Attribute.Blocks;
   };
 }
 
@@ -205,7 +205,7 @@ export interface ReponseReponsetextuelle extends Schema.Component {
   };
   attributes: {
     label: Attribute.String & Attribute.Required;
-    text: Attribute.Text & Attribute.Required;
+    text: Attribute.Blocks & Attribute.Required;
   };
 }
 
