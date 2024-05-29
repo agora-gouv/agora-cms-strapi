@@ -27,7 +27,8 @@
       "type": "string"
     },
     "transcription": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "informationAdditionnelleDescription": {
       "type": "blocks"

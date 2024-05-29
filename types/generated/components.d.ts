@@ -191,7 +191,7 @@ export interface ReponseReponseVideo extends Schema.Component {
     videoWidth: Attribute.Integer & Attribute.Required;
     videoHeight: Attribute.Integer & Attribute.Required;
     informationAdditionnelleTitre: Attribute.String;
-    transcription: Attribute.Text;
+    transcription: Attribute.Text & Attribute.Required;
     informationAdditionnelleDescription: Attribute.Blocks;
   };
 }
