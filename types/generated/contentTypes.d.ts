@@ -869,6 +869,7 @@ export interface ApiConsultationApresReponseOuTermineeConsultationApresReponseOu
     singularName: 'consultation-apres-reponse-ou-terminee';
     pluralName: 'consultation-apres-reponse-ou-terminees';
     displayName: 'Consultation - Contenu apr\u00E8s r\u00E9ponse ou termin\u00E9e';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -876,19 +877,19 @@ export interface ApiConsultationApresReponseOuTermineeConsultationApresReponseOu
   attributes: {
     template_partage_avant_fin_consultation: Attribute.String &
       Attribute.Required;
-    encart_visualisation_resultat_avant_fin_consultation_pictogramme: Attribute.String &
+    encart_visualisation_resultat_avant_fin_consultation_picto: Attribute.String &
       Attribute.Required;
-    encart_visualisation_resultat_avant_fin_consultation_description: Attribute.Blocks &
+    encart_visualisation_resultat_avant_fin_consultation_desc: Attribute.Blocks &
       Attribute.Required;
-    encart_visualisation_resultat_avant_fin_consultation_call_to_action: Attribute.String &
+    encart_visualisation_resultat_avant_fin_consultation_cta: Attribute.String &
       Attribute.Required;
     template_partage_apres_fin_consultation: Attribute.String &
       Attribute.Required;
-    encart_visualisation_resultat_apres_fin_consultation_pictogramme: Attribute.String &
+    encart_visualisation_resultat_apres_fin_consultation_picto: Attribute.String &
       Attribute.Required;
-    encart_visualisation_resultat_apres_fin_consultation_description: Attribute.Blocks &
+    encart_visualisation_resultat_apres_fin_consultation_desc: Attribute.Blocks &
       Attribute.Required;
-    encart_visualisation_resultat_apres_fin_consultation_call_to_action: Attribute.String &
+    encart_visualisation_resultat_apres_fin_consultation_cta: Attribute.String &
       Attribute.Required;
     footer_titre: Attribute.String & Attribute.Required;
     footer_description: Attribute.Blocks & Attribute.Required;

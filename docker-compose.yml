@@ -1,0 +1,9 @@
+services:
+  postgres-strapi:
+    image: postgres:12.3-alpine
+    ports:
+      - 5433:5432
+    environment:
+      - POSTGRES_PASSWORD=strapi_password
+      - POSTGRES_USER=strapi_user
+      - POSTGRES_DB=strapi_db

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "consultation-apres-reponse-ou-terminee",
     "pluralName": "consultation-apres-reponse-ou-terminees",
-    "displayName": "Consultation - Contenu après réponse ou terminée"
+    "displayName": "Consultation - Contenu après réponse ou terminée",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,15 +16,15 @@
       "type": "string",
       "required": true
     },
-    "encart_visualisation_resultat_avant_fin_consultation_pictogramme": {
+    "encart_visualisation_resultat_avant_fin_consultation_picto": {
       "type": "string",
       "required": true
     },
-    "encart_visualisation_resultat_avant_fin_consultation_description": {
+    "encart_visualisation_resultat_avant_fin_consultation_desc": {
       "type": "blocks",
       "required": true
     },
-    "encart_visualisation_resultat_avant_fin_consultation_call_to_action": {
+    "encart_visualisation_resultat_avant_fin_consultation_cta": {
       "type": "string",
       "required": true
     },
@@ -31,15 +32,15 @@
       "type": "string",
       "required": true
     },
-    "encart_visualisation_resultat_apres_fin_consultation_pictogramme": {
+    "encart_visualisation_resultat_apres_fin_consultation_picto": {
       "type": "string",
       "required": true
     },
-    "encart_visualisation_resultat_apres_fin_consultation_description": {
+    "encart_visualisation_resultat_apres_fin_consultation_desc": {
       "type": "blocks",
       "required": true
     },
-    "encart_visualisation_resultat_apres_fin_consultation_call_to_action": {
+    "encart_visualisation_resultat_apres_fin_consultation_cta": {
       "type": "string",
       "required": true
     },

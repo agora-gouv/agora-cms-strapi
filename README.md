@@ -7,27 +7,15 @@ Strapi comes with a full featured [Command Line Interface](https://docs.strapi.i
 Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
 
 ```
-npm run develop
-# or
+docker compose up -d
 yarn develop
 ```
 
-### `start`
+FAQ
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
+- Pourquoi utiliser Postgres plutôt que sqlite en local ?
+  - pour avoir un environnement qui se rapproche le plus de la dev et de la prod
 
-```
-npm run start
-# or
-yarn start
-```
+Bon à savoir : 
 
-### `build`
-
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
-
-```
-npm run build
-# or
-yarn build
-```
+- Postgres ne gère pas les noms de table à ralonge donc nous sommes limités dans notre nommage de tables ou de colonnes à 63 caractères sur Strapi
