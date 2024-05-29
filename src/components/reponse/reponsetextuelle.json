@@ -12,7 +12,7 @@
       "required": true
     },
     "text": {
-      "type": "text",
+      "type": "blocks",
       "required": true
     }
   }
