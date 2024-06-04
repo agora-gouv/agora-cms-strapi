@@ -1131,6 +1131,7 @@ export interface ApiThematiqueThematique extends Schema.CollectionType {
   attributes: {
     label: Attribute.String & Attribute.Required;
     pictogramme: Attribute.String & Attribute.Required;
+    id_base_de_donnees: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -1,95 +1,24 @@
-INSERT INTO thematiques
-VALUES ('1', 'Travail', '💼', now(), now(), now(), 1, 1)
-ON CONFLICT DO NOTHING;
-
-INSERT INTO thematiques
-VALUES ('2', 'Transition écologique', '🌱', now(), now(), now(), 1, 1)
-ON CONFLICT DO NOTHING;
-
-INSERT INTO thematiques
-VALUES ('3', 'Santé', '🏥', now(), now(), now(), 1, 1)
-ON CONFLICT DO NOTHING;
-
-INSERT INTO thematiques
-VALUES ('4', 'Economie', '📈', now(), now(), now(), 1, 1)
-ON CONFLICT DO NOTHING;
-
-INSERT INTO thematiques
-VALUES ('5', 'Education & jeunesse', '🎓', now(), now(), now(), 1, 1)
-ON CONFLICT DO NOTHING;
-
-INSERT INTO thematiques
-VALUES ('6', 'Europe & international', '🌏', now(), now(), now(), 1, 1)
-ON CONFLICT DO NOTHING;
-
-INSERT INTO thematiques
-VALUES ('7', 'Transports', '🚊', now(), now(), now(), 1, 1)
-ON CONFLICT DO NOTHING;
-
-INSERT INTO thematiques
-VALUES ('8', 'Sécurité & défense', '🛡', now(), now(), now(), 1, 1)
-ON CONFLICT DO NOTHING;
-
-INSERT INTO thematiques
-VALUES ('9', 'Démocratie', '🗳', now(), now(), now(), 1, 1)
-ON CONFLICT DO NOTHING;
-
-INSERT INTO thematiques
-VALUES ('10', 'Autre', '📦', now(), now(), now(), 1, 1)
-ON CONFLICT DO NOTHING;
-
-INSERT INTO thematiques
-VALUES ('11', 'Agriculture & alimentation', '🌾', now(), now(), now(), 1, 1)
-ON CONFLICT DO NOTHING;
-
-INSERT INTO thematiques
-VALUES ('12', 'Culture', '🎭', now(), now(), now(), 1, 1)
-ON CONFLICT DO NOTHING;
-
-INSERT INTO thematiques
-VALUES ('13', 'Etudes sup. & recherche', '🧪', now(), now(), now(), 1, 1)
-ON CONFLICT DO NOTHING;
-
-INSERT INTO thematiques
-VALUES ('14', 'Outre-mer', '🌍', now(), now(), now(), 1, 1)
-ON CONFLICT DO NOTHING;
-
-INSERT INTO thematiques
-VALUES ('15', 'Justice', '⚖️', now(), now(), now(), 1, 1)
-ON CONFLICT DO NOTHING;
-
-INSERT INTO thematiques
-VALUES ('16', 'Solidarités', '🤝', now(), now(), now(), 1, 1)
-ON CONFLICT DO NOTHING;
-
-INSERT INTO thematiques
-VALUES ('17', 'Autonomie', '👵', now(), now(), now(), 1, 1)
-ON CONFLICT DO NOTHING;
-
-INSERT INTO thematiques
-VALUES ('18', 'Handicap', '♿️', now(), now(), now(), 1, 1)
-ON CONFLICT DO NOTHING;
-
-INSERT INTO thematiques
-VALUES ('19', 'Sport', '🏀', now(), now(), now(), 1, 1)
-ON CONFLICT DO NOTHING;
-
-INSERT INTO thematiques
-VALUES ('20', 'Services publics', '🏛', now(), now(), now(), 1, 1)
-ON CONFLICT DO NOTHING;
-
-INSERT INTO thematiques
-VALUES ('21', 'Energie', '⚡️', now(), now(), now(), 1, 1)
-ON CONFLICT DO NOTHING;
-
-INSERT INTO thematiques
-VALUES ('22', 'Egalité', '👥️', now(), now(), now(), 1, 1)
-ON CONFLICT DO NOTHING;
-
-INSERT INTO thematiques
-VALUES ('23', 'Enfance', '👶', now(), now(), now(), 1, 1)
-ON CONFLICT DO NOTHING;
-
-INSERT INTO thematiques
-VALUES ('24', 'Logement', '🏡', now(), now(), now(), 1, 1)
-ON CONFLICT DO NOTHING;
+INSERT INTO thematiques (id, label, pictogramme, id_base_de_donnees, created_at, updated_at, published_at, created_by_id, updated_by_id) VALUES (1,'Travail', '💼', '1f3dbdc6-cff7-4d6a-88b5-c5ec84c55d15', now(), now(), now(), 1, 1);
+INSERT INTO thematiques (id, label, pictogramme, id_base_de_donnees, created_at, updated_at, published_at, created_by_id, updated_by_id) VALUES (2,'Transition écologique', '🌱', 'bb051bf2-644b-47b6-9488-7759fa727dc0', now(), now(), now(), 1, 1);
+INSERT INTO thematiques (id, label, pictogramme, id_base_de_donnees, created_at, updated_at, published_at, created_by_id, updated_by_id) VALUES (3,'Santé', '🏥', 'a4bb4b27-3271-4278-83c9-79ac3eee843a', now(), now(), now(), 1, 1);
+INSERT INTO thematiques (id, label, pictogramme, id_base_de_donnees, created_at, updated_at, published_at, created_by_id, updated_by_id) VALUES (4,'Economie', '📈', 'c97c3afd-1940-4b6d-950a-734b885ee5cb', now(), now(), now(), 1, 1);
+INSERT INTO thematiques (id, label, pictogramme, id_base_de_donnees, created_at, updated_at, published_at, created_by_id, updated_by_id) VALUES (5,'Education & jeunesse', '🎓', '5b9180e6-3e43-4c63-bcb5-4eab621fc016', now(), now(), now(), 1, 1);
+INSERT INTO thematiques (id, label, pictogramme, id_base_de_donnees, created_at, updated_at, published_at, created_by_id, updated_by_id) VALUES (6,'Europe & international', '🌏', '8e200137-df3b-4bde-9981-b39a3d326da7', now(), now(), now(), 1, 1);
+INSERT INTO thematiques (id, label, pictogramme, id_base_de_donnees, created_at, updated_at, published_at, created_by_id, updated_by_id) VALUES (7,'Transports', '🚊', '0f644115-08f3-46ff-b776-51f19c65fdd1', now(), now(), now(), 1, 1);
+INSERT INTO thematiques (id, label, pictogramme, id_base_de_donnees, created_at, updated_at, published_at, created_by_id, updated_by_id) VALUES (8,'Sécurité & défense', '🛡', 'b276606e-f251-454e-9a73-9b70a6f30bfd', now(), now(), now(), 1, 1);
+INSERT INTO thematiques (id, label, pictogramme, id_base_de_donnees, created_at, updated_at, published_at, created_by_id, updated_by_id) VALUES (9,'Démocratie', '🗳', '30671310-ee62-11ed-a05b-0242ac120003', now(), now(), now(), 1, 1);
+INSERT INTO thematiques (id, label, pictogramme, id_base_de_donnees, created_at, updated_at, published_at, created_by_id, updated_by_id) VALUES (10,'Autre', '📦', '47897e51-8e94-4920-a26a-1b1e5e232e82', now(), now(), now(), 1, 1);
+INSERT INTO thematiques (id, label, pictogramme, id_base_de_donnees, created_at, updated_at, published_at, created_by_id, updated_by_id) VALUES (11,'Agriculture & alimentation', '🌾', '5cdb4732-0153-11ee-be56-0242ac120002', now(), now(), now(), 1, 1);
+INSERT INTO thematiques (id, label, pictogramme, id_base_de_donnees, created_at, updated_at, published_at, created_by_id, updated_by_id) VALUES (12,'Culture', '🎭', '01c4789a-015e-11ee-be56-0242ac120002', now(), now(), now(), 1, 1);
+INSERT INTO thematiques (id, label, pictogramme, id_base_de_donnees, created_at, updated_at, published_at, created_by_id, updated_by_id) VALUES (13,'Etudes sup. & recherche', '🧪', '0ca6f2f6-015e-11ee-be56-0242ac120002', now(), now(), now(), 1, 1);
+INSERT INTO thematiques (id, label, pictogramme, id_base_de_donnees, created_at, updated_at, published_at, created_by_id, updated_by_id) VALUES (14,'Outre-mer', '🌍', '175ab0b6-015e-11ee-be56-0242ac120002', now(), now(), now(), 1, 1);
+INSERT INTO thematiques (id, label, pictogramme, id_base_de_donnees, created_at, updated_at, published_at, created_by_id, updated_by_id) VALUES (15,'Justice', '⚖️', '2186bc60-015e-11ee-be56-0242ac120002', now(), now(), now(), 1, 1);
+INSERT INTO thematiques (id, label, pictogramme, id_base_de_donnees, created_at, updated_at, published_at, created_by_id, updated_by_id) VALUES (16,'Solidarités', '🤝', '2d1c72fe-015e-11ee-be56-0242ac120002', now(), now(), now(), 1, 1);
+INSERT INTO thematiques (id, label, pictogramme, id_base_de_donnees, created_at, updated_at, published_at, created_by_id, updated_by_id) VALUES (17,'Autonomie', '👵', '3953a966-015e-11ee-be56-0242ac120002', now(), now(), now(), 1, 1);
+INSERT INTO thematiques (id, label, pictogramme, id_base_de_donnees, created_at, updated_at, published_at, created_by_id, updated_by_id) VALUES (18,'Handicap', '♿️', '41dcc98c-015e-11ee-be56-0242ac120002', now(), now(), now(), 1, 1);
+INSERT INTO thematiques (id, label, pictogramme, id_base_de_donnees, created_at, updated_at, published_at, created_by_id, updated_by_id) VALUES (19,'Sport', '🏀', '4c379646-015e-11ee-be56-0242ac120002', now(), now(), now(), 1, 1);
+INSERT INTO thematiques (id, label, pictogramme, id_base_de_donnees, created_at, updated_at, published_at, created_by_id, updated_by_id) VALUES (20,'Services publics', '🏛', '5531afc0-015e-11ee-be56-0242ac120002', now(), now(), now(), 1, 1);
+INSERT INTO thematiques (id, label, pictogramme, id_base_de_donnees, created_at, updated_at, published_at, created_by_id, updated_by_id) VALUES (21,'Energie', '⚡️', '5e6bed94-015e-11ee-be56-0242ac120002', now(), now(), now(), 1, 1);
+INSERT INTO thematiques (id, label, pictogramme, id_base_de_donnees, created_at, updated_at, published_at, created_by_id, updated_by_id) VALUES (22,'Egalité', '👥️', '73fa6438-015e-11ee-be56-0242ac120002', now(), now(), now(), 1, 1);
+INSERT INTO thematiques (id, label, pictogramme, id_base_de_donnees, created_at, updated_at, published_at, created_by_id, updated_by_id) VALUES (23,'Enfance', '👶', '801e3eb0-015e-11ee-be56-0242ac120002', now(), now(), now(), 1, 1);
+INSERT INTO thematiques (id, label, pictogramme, id_base_de_donnees, created_at, updated_at, published_at, created_by_id, updated_by_id) VALUES (24,'Logement', '🏡', '8a4e95e2-015e-11ee-be56-0242ac120002', now(), now(), now(), 1, 1);
