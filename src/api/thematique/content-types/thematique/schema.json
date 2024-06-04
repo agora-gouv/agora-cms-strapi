@@ -19,6 +19,10 @@
     "pictogramme": {
       "type": "string",
       "required": true
+    },
+    "id_base_de_donnees": {
+      "type": "string",
+      "required": false
     }
   }
 }
