@@ -806,8 +806,6 @@ export interface ApiConsultationConsultation extends Schema.CollectionType {
       'oneToOne',
       'api::thematique.thematique'
     >;
-    date_de_debut: Attribute.Date & Attribute.Required;
-    date_de_fin: Attribute.Date & Attribute.Required;
     url_image_de_couverture: Attribute.String & Attribute.Required;
     url_image_page_de_contenu: Attribute.String & Attribute.Required;
     nombre_de_questions: Attribute.Integer & Attribute.Required;
@@ -844,6 +842,9 @@ export interface ApiConsultationConsultation extends Schema.CollectionType {
       'oneToOne',
       'api::consultation-contenu-a-venir.consultation-contenu-a-venir'
     >;
+    flamme_label: Attribute.String;
+    datetime_de_debut: Attribute.DateTime & Attribute.Required;
+    datetime_de_fin: Attribute.DateTime & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

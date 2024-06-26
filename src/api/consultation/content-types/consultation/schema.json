@@ -21,14 +21,6 @@
       "relation": "oneToOne",
       "target": "api::thematique.thematique"
     },
-    "date_de_debut": {
-      "type": "date",
-      "required": true
-    },
-    "date_de_fin": {
-      "type": "date",
-      "required": true
-    },
     "url_image_de_couverture": {
       "type": "string",
       "required": true
@@ -83,6 +75,17 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::consultation-contenu-a-venir.consultation-contenu-a-venir"
+    },
+    "flamme_label": {
+      "type": "string"
+    },
+    "datetime_de_debut": {
+      "type": "datetime",
+      "required": true
+    },
+    "datetime_de_fin": {
+      "type": "datetime",
+      "required": true
     }
   }
 }
