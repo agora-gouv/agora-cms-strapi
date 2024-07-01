@@ -1038,7 +1038,6 @@ export interface ApiConsultationContenuAutreConsultationContenuAutre
     feedback_pictogramme: Attribute.String & Attribute.Required;
     feedback_titre: Attribute.String & Attribute.Required;
     feedback_description: Attribute.Blocks & Attribute.Required;
-    date_publication: Attribute.Date & Attribute.Required;
     sections: Attribute.DynamicZone<
       [
         'consultation-section.section-chiffre',
