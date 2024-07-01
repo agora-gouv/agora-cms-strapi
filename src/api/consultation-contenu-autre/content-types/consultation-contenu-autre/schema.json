@@ -82,6 +82,10 @@
         "réponse et pourcentage"
       ],
       "required": true
+    },
+    "datetime_publication": {
+      "type": "datetime",
+      "required": true
     }
   }
 }

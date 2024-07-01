@@ -914,6 +914,7 @@ export interface ApiConsultationApresReponseOuTermineeConsultationApresReponseOu
       ]
     > &
       Attribute.Required;
+    datetime_publication: Attribute.DateTime & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -964,6 +965,7 @@ export interface ApiConsultationAvantReponseConsultationAvantReponse
     > &
       Attribute.Required;
     liste_objectifs: Attribute.Blocks;
+    datetime_publication: Attribute.DateTime & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1053,6 +1055,7 @@ export interface ApiConsultationContenuAutreConsultationContenuAutre
       ['contenu', 'r\u00E9ponse et pourcentage']
     > &
       Attribute.Required;
+    datetime_publication: Attribute.DateTime & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
