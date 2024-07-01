@@ -52,10 +52,6 @@
       "type": "blocks",
       "required": true
     },
-    "date_publication": {
-      "type": "date",
-      "required": true
-    },
     "sections": {
       "type": "dynamiczone",
       "components": [
