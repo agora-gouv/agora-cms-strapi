@@ -90,6 +90,10 @@
     "objectifs": {
       "type": "blocks",
       "required": true
+    },
+    "titre_consultation": {
+      "type": "string",
+      "required": true
     }
   }
 }
