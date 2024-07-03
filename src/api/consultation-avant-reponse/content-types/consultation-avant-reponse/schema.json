@@ -44,10 +44,6 @@
       ],
       "required": true
     },
-    "liste_objectifs": {
-      "type": "blocks",
-      "required": false
-    },
     "datetime_publication": {
       "type": "datetime",
       "required": true

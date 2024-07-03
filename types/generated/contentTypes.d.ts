@@ -800,7 +800,6 @@ export interface ApiConsultationConsultation extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    titre: Attribute.String & Attribute.Required;
     thematique: Attribute.Relation<
       'api::consultation.consultation',
       'oneToOne',
@@ -845,6 +844,8 @@ export interface ApiConsultationConsultation extends Schema.CollectionType {
     flamme_label: Attribute.String;
     datetime_de_debut: Attribute.DateTime & Attribute.Required;
     datetime_de_fin: Attribute.DateTime & Attribute.Required;
+    description: Attribute.Blocks & Attribute.Required;
+    objectifs: Attribute.Blocks & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -964,7 +965,6 @@ export interface ApiConsultationAvantReponseConsultationAvantReponse
       ]
     > &
       Attribute.Required;
-    liste_objectifs: Attribute.Blocks;
     datetime_publication: Attribute.DateTime & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

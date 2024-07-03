@@ -12,10 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "titre": {
-      "type": "string",
-      "required": true
-    },
     "thematique": {
       "type": "relation",
       "relation": "oneToOne",
@@ -85,6 +81,14 @@
     },
     "datetime_de_fin": {
       "type": "datetime",
+      "required": true
+    },
+    "description": {
+      "type": "blocks",
+      "required": true
+    },
+    "objectifs": {
+      "type": "blocks",
       "required": true
     }
   }
