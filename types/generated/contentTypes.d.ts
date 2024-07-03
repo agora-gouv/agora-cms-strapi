@@ -800,6 +800,7 @@ export interface ApiConsultationConsultation extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
+    titre: Attribute.String & Attribute.Required;
     thematique: Attribute.Relation<
       'api::consultation.consultation',
       'oneToOne',

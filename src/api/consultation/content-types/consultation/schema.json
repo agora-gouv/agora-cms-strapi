@@ -12,6 +12,10 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "titre": {
+      "type": "string",
+      "required": true
+    },
     "thematique": {
       "type": "relation",
       "relation": "oneToOne",
