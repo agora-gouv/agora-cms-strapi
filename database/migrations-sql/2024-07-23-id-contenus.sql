@@ -1,0 +1,4 @@
+ALTER SEQUENCE consultations_avant_reponse_id_seq RESTART WITH 6000;
+ALTER SEQUENCE consultation_apres_reponse_ou_terminees_id_seq RESTART WITH 12000;
+ALTER SEQUENCE consultations_contenu_autre_id_seq RESTART WITH 18000;
+ALTER SEQUENCE consultation_contenus_a_venir_id_seq RESTART WITH 24000;
