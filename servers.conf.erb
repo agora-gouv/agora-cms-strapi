@@ -13,6 +13,7 @@ server {
     }
 
     location / {
+        <%= ENV['NGINX_ADMIN_ACCESS_RULES'] %>
         <%= ENV['NGINX_API_ACCESS_RULES'] %>
         deny all;
 
