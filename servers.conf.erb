@@ -4,7 +4,6 @@ server {
 
     location /admin {
         <%= ENV['NGINX_ADMIN_ACCESS_RULES'] %>
-        # Interdiction pour les autres
         deny all;
 
         proxy_set_header  X-Remote-Address $remote_addr;
@@ -14,9 +13,7 @@ server {
     }
 
     location / {
-        <%= ENV['NGINX_ADMIN_ACCESS_RULES'] %>
         <%= ENV['NGINX_API_ACCESS_RULES'] %>
-        # Interdiction pour les autres
         deny all;
 
         proxy_set_header  X-Remote-Address $remote_addr;
