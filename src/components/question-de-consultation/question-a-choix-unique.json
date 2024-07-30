@@ -22,6 +22,9 @@
     },
     "popup_explication": {
       "type": "blocks"
+    },
+    "question_suivante": {
+      "type": "integer"
     }
   }
 }

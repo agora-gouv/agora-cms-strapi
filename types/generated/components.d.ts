@@ -110,6 +110,7 @@ export interface QuestionDeConsultationDescription extends Schema.Component {
     titre: Attribute.String & Attribute.Required;
     numero: Attribute.Integer & Attribute.Required;
     description: Attribute.Blocks & Attribute.Required;
+    question_suivante: Attribute.Integer;
   };
 }
 
@@ -127,6 +128,7 @@ export interface QuestionDeConsultationQuestionAChoixMultiples
       Attribute.Required;
     nombre_maximum_de_choix: Attribute.Integer & Attribute.Required;
     popup_explication: Attribute.Blocks;
+    question_suivante: Attribute.Integer;
   };
 }
 
@@ -142,6 +144,7 @@ export interface QuestionDeConsultationQuestionAChoixUnique
     numero: Attribute.Integer & Attribute.Required;
     choix: Attribute.Component<'question-de-consultation.choix', true>;
     popup_explication: Attribute.Blocks;
+    question_suivante: Attribute.Integer;
   };
 }
 
@@ -175,6 +178,7 @@ export interface QuestionDeConsultationQuestionOuverte
     titre: Attribute.String & Attribute.Required;
     numero: Attribute.Integer & Attribute.Required;
     popup_explication: Attribute.Blocks;
+    question_suivante: Attribute.Integer;
   };
 }
 
