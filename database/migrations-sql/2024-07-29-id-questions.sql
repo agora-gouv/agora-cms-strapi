@@ -1,0 +1,5 @@
+ALTER SEQUENCE components_question_descriptions_id_seq RESTART WITH 10000;
+ALTER SEQUENCE components_question_question_a_choix_multiples_id_seq RESTART WITH 20000;
+ALTER SEQUENCE components_question_question_a_choix_uniques_id_seq RESTART WITH 30000;
+ALTER SEQUENCE components_question_question_conditionnelles_id_seq RESTART WITH 40000;
+ALTER SEQUENCE components_question_question_ouvertes_id_seq RESTART WITH 50000;
