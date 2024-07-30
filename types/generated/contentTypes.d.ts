@@ -901,10 +901,6 @@ export interface ApiConsultationApresReponseOuTermineeConsultationApresReponseOu
     feedback_description: Attribute.Blocks & Attribute.Required;
     historique_titre: Attribute.String & Attribute.Required;
     historique_call_to_action: Attribute.String & Attribute.Required;
-    historique_type: Attribute.Enumeration<
-      ['contenu', 'r\u00E9ponse et pourcentage']
-    > &
-      Attribute.Required;
     sections: Attribute.DynamicZone<
       [
         'consultation-section.section-chiffre',
@@ -951,10 +947,6 @@ export interface ApiConsultationAvantReponseConsultationAvantReponse
     template_partage: Attribute.String & Attribute.Required;
     historique_titre: Attribute.String & Attribute.Required;
     historique_call_to_action: Attribute.String & Attribute.Required;
-    historique_type: Attribute.Enumeration<
-      ['contenu', 'r\u00E9ponse et pourcentage']
-    > &
-      Attribute.Required;
     sections: Attribute.DynamicZone<
       [
         'consultation-section.section-chiffre',

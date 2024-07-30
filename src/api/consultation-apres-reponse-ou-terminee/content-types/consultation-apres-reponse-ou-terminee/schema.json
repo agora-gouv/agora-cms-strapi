@@ -72,14 +72,6 @@
       "type": "string",
       "required": true
     },
-    "historique_type": {
-      "type": "enumeration",
-      "enum": [
-        "contenu",
-        "réponse et pourcentage"
-      ],
-      "required": true
-    },
     "sections": {
       "type": "dynamiczone",
       "components": [
