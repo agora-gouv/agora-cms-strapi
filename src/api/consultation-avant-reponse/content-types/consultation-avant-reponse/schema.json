@@ -35,10 +35,6 @@
         "consultation-section.section-video"
       ],
       "required": true
-    },
-    "datetime_publication": {
-      "type": "datetime",
-      "required": true
     }
   }
 }

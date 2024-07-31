@@ -912,7 +912,6 @@ export interface ApiConsultationApresReponseOuTermineeConsultationApresReponseOu
       ]
     > &
       Attribute.Required;
-    datetime_publication: Attribute.DateTime & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -958,7 +957,6 @@ export interface ApiConsultationAvantReponseConsultationAvantReponse
       ]
     > &
       Attribute.Required;
-    datetime_publication: Attribute.DateTime & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
