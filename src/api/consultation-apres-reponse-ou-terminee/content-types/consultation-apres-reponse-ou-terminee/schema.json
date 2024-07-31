@@ -72,7 +72,8 @@
         "consultation-section.section-image",
         "consultation-section.section-texte-riche",
         "consultation-section.section-titre",
-        "consultation-section.section-video"
+        "consultation-section.section-video",
+        "consultation-section.section-accordeon"
       ],
       "required": true
     }

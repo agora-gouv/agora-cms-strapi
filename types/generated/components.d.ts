@@ -1,5 +1,17 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface ConsultationSectionSectionAccordeon extends Schema.Component {
+  collectionName: 'components_consultation_section_section_accordeons';
+  info: {
+    displayName: 'Section accord\u00E9on';
+    icon: 'layer';
+  };
+  attributes: {
+    titre: Attribute.String & Attribute.Required;
+    description: Attribute.Blocks & Attribute.Required;
+  };
+}
+
 export interface ConsultationSectionSectionChiffre extends Schema.Component {
   collectionName: 'components_consultation_section_section_chiffres';
   info: {
@@ -216,6 +228,7 @@ export interface ReponseReponsetextuelle extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'consultation-section.section-accordeon': ConsultationSectionSectionAccordeon;
       'consultation-section.section-chiffre': ConsultationSectionSectionChiffre;
       'consultation-section.section-citation': ConsultationSectionSectionCitation;
       'consultation-section.section-image': ConsultationSectionSectionImage;

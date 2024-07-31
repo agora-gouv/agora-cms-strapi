@@ -906,7 +906,8 @@ export interface ApiConsultationApresReponseOuTermineeConsultationApresReponseOu
         'consultation-section.section-image',
         'consultation-section.section-texte-riche',
         'consultation-section.section-titre',
-        'consultation-section.section-video'
+        'consultation-section.section-video',
+        'consultation-section.section-accordeon'
       ]
     > &
       Attribute.Required;
@@ -951,7 +952,8 @@ export interface ApiConsultationAvantReponseConsultationAvantReponse
         'consultation-section.section-image',
         'consultation-section.section-texte-riche',
         'consultation-section.section-titre',
-        'consultation-section.section-video'
+        'consultation-section.section-video',
+        'consultation-section.section-accordeon'
       ]
     > &
       Attribute.Required;
@@ -1030,7 +1032,8 @@ export interface ApiConsultationContenuAutreConsultationContenuAutre
         'consultation-section.section-image',
         'consultation-section.section-texte-riche',
         'consultation-section.section-titre',
-        'consultation-section.section-video'
+        'consultation-section.section-video',
+        'consultation-section.section-accordeon'
       ]
     >;
     historique_titre: Attribute.String & Attribute.Required;
