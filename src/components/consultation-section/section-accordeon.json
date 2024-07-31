@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_consultation_section_section_accordeons",
+  "info": {
+    "displayName": "Section accordéon",
+    "icon": "layer"
+  },
+  "options": {},
+  "attributes": {
+    "titre": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "blocks",
+      "required": true
+    }
+  }
+}
