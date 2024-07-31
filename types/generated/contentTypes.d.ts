@@ -894,8 +894,6 @@ export interface ApiConsultationApresReponseOuTermineeConsultationApresReponseOu
       Attribute.Required;
     encart_visualisation_resultat_apres_fin_consultation_cta: Attribute.String &
       Attribute.Required;
-    footer_titre: Attribute.String & Attribute.Required;
-    footer_description: Attribute.Blocks & Attribute.Required;
     feedback_pictogramme: Attribute.String & Attribute.Required;
     feedback_titre: Attribute.String & Attribute.Required;
     feedback_description: Attribute.Blocks & Attribute.Required;
@@ -1022,10 +1020,6 @@ export interface ApiConsultationContenuAutreConsultationContenuAutre
     message_mise_a_jour: Attribute.String & Attribute.Required;
     lien_telechargement_analyse: Attribute.String;
     template_partage: Attribute.String & Attribute.Required;
-    header_titre: Attribute.String & Attribute.Required;
-    header_description: Attribute.Blocks & Attribute.Required;
-    footer_titre: Attribute.String & Attribute.Required;
-    footer_description: Attribute.Blocks & Attribute.Required;
     feedback_pictogramme: Attribute.String & Attribute.Required;
     feedback_titre: Attribute.String & Attribute.Required;
     feedback_description: Attribute.Blocks & Attribute.Required;

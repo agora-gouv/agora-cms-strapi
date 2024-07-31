@@ -24,22 +24,6 @@
       "type": "string",
       "required": true
     },
-    "header_titre": {
-      "type": "string",
-      "required": true
-    },
-    "header_description": {
-      "type": "blocks",
-      "required": true
-    },
-    "footer_titre": {
-      "type": "string",
-      "required": true
-    },
-    "footer_description": {
-      "type": "blocks",
-      "required": true
-    },
     "feedback_pictogramme": {
       "type": "string",
       "required": true
