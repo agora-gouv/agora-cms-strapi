@@ -894,17 +894,11 @@ export interface ApiConsultationApresReponseOuTermineeConsultationApresReponseOu
       Attribute.Required;
     encart_visualisation_resultat_apres_fin_consultation_cta: Attribute.String &
       Attribute.Required;
-    footer_titre: Attribute.String & Attribute.Required;
-    footer_description: Attribute.Blocks & Attribute.Required;
     feedback_pictogramme: Attribute.String & Attribute.Required;
     feedback_titre: Attribute.String & Attribute.Required;
     feedback_description: Attribute.Blocks & Attribute.Required;
     historique_titre: Attribute.String & Attribute.Required;
     historique_call_to_action: Attribute.String & Attribute.Required;
-    historique_type: Attribute.Enumeration<
-      ['contenu', 'r\u00E9ponse et pourcentage']
-    > &
-      Attribute.Required;
     sections: Attribute.DynamicZone<
       [
         'consultation-section.section-chiffre',
@@ -916,7 +910,6 @@ export interface ApiConsultationApresReponseOuTermineeConsultationApresReponseOu
       ]
     > &
       Attribute.Required;
-    datetime_publication: Attribute.DateTime & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -951,10 +944,6 @@ export interface ApiConsultationAvantReponseConsultationAvantReponse
     template_partage: Attribute.String & Attribute.Required;
     historique_titre: Attribute.String & Attribute.Required;
     historique_call_to_action: Attribute.String & Attribute.Required;
-    historique_type: Attribute.Enumeration<
-      ['contenu', 'r\u00E9ponse et pourcentage']
-    > &
-      Attribute.Required;
     sections: Attribute.DynamicZone<
       [
         'consultation-section.section-chiffre',
@@ -966,7 +955,6 @@ export interface ApiConsultationAvantReponseConsultationAvantReponse
       ]
     > &
       Attribute.Required;
-    datetime_publication: Attribute.DateTime & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1032,10 +1020,6 @@ export interface ApiConsultationContenuAutreConsultationContenuAutre
     message_mise_a_jour: Attribute.String & Attribute.Required;
     lien_telechargement_analyse: Attribute.String;
     template_partage: Attribute.String & Attribute.Required;
-    header_titre: Attribute.String & Attribute.Required;
-    header_description: Attribute.Blocks & Attribute.Required;
-    footer_titre: Attribute.String & Attribute.Required;
-    footer_description: Attribute.Blocks & Attribute.Required;
     feedback_pictogramme: Attribute.String & Attribute.Required;
     feedback_titre: Attribute.String & Attribute.Required;
     feedback_description: Attribute.Blocks & Attribute.Required;
@@ -1051,10 +1035,6 @@ export interface ApiConsultationContenuAutreConsultationContenuAutre
     >;
     historique_titre: Attribute.String & Attribute.Required;
     historique_call_to_action: Attribute.String & Attribute.Required;
-    historique_type: Attribute.Enumeration<
-      ['contenu', 'r\u00E9ponse et pourcentage']
-    > &
-      Attribute.Required;
     datetime_publication: Attribute.DateTime & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

@@ -44,14 +44,6 @@
       "type": "string",
       "required": true
     },
-    "footer_titre": {
-      "type": "string",
-      "required": true
-    },
-    "footer_description": {
-      "type": "blocks",
-      "required": true
-    },
     "feedback_pictogramme": {
       "type": "string",
       "required": true
@@ -72,14 +64,6 @@
       "type": "string",
       "required": true
     },
-    "historique_type": {
-      "type": "enumeration",
-      "enum": [
-        "contenu",
-        "réponse et pourcentage"
-      ],
-      "required": true
-    },
     "sections": {
       "type": "dynamiczone",
       "components": [
@@ -90,10 +74,6 @@
         "consultation-section.section-titre",
         "consultation-section.section-video"
       ],
-      "required": true
-    },
-    "datetime_publication": {
-      "type": "datetime",
       "required": true
     }
   }
