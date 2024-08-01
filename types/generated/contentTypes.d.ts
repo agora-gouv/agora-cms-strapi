@@ -844,8 +844,6 @@ export interface ApiConsultationConsultation extends Schema.CollectionType {
     flamme_label: Attribute.String;
     datetime_de_debut: Attribute.DateTime & Attribute.Required;
     datetime_de_fin: Attribute.DateTime & Attribute.Required;
-    description: Attribute.Blocks & Attribute.Required;
-    objectifs: Attribute.Blocks & Attribute.Required;
     titre_consultation: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
