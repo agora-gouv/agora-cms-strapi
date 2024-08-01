@@ -83,14 +83,6 @@
       "type": "datetime",
       "required": true
     },
-    "description": {
-      "type": "blocks",
-      "required": true
-    },
-    "objectifs": {
-      "type": "blocks",
-      "required": true
-    },
     "titre_consultation": {
       "type": "string",
       "required": true
