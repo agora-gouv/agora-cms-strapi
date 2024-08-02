@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "charte_participations",
+  "info": {
+    "singularName": "charte-participation",
+    "pluralName": "charte-participations",
+    "displayName": "Charte participation"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "charte": {
+      "type": "blocks",
+      "required": false
+    },
+    "datetime_debut": {
+      "type": "datetime",
+      "required": true
+    }
+  }
+}

@@ -788,6 +788,38 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiCharteParticipationCharteParticipation
+  extends Schema.CollectionType {
+  collectionName: 'charte_participations';
+  info: {
+    singularName: 'charte-participation';
+    pluralName: 'charte-participations';
+    displayName: 'Charte participation';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    charte: Attribute.Blocks;
+    datetime_debut: Attribute.DateTime & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::charte-participation.charte-participation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::charte-participation.charte-participation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiConsultationConsultation extends Schema.CollectionType {
   collectionName: 'consultations';
   info: {
@@ -1055,6 +1087,41 @@ export interface ApiConsultationContenuAutreConsultationContenuAutre
   };
 }
 
+export interface ApiQaGHeadersOngletQaGHeadersOnglet
+  extends Schema.CollectionType {
+  collectionName: 'qa_g_headers_onglets';
+  info: {
+    singularName: 'qa-g-headers-onglet';
+    pluralName: 'qa-g-headers-onglets';
+    displayName: 'QaG - Headers onglet';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    titre: Attribute.String & Attribute.Required;
+    message: Attribute.Text & Attribute.Required;
+    type: Attribute.Enumeration<['top', 'supporting', 'trending', 'latest']> &
+      Attribute.Required;
+    datetime_publication: Attribute.DateTime & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::qa-g-headers-onglet.qa-g-headers-onglet',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::qa-g-headers-onglet.qa-g-headers-onglet',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiReponseDuGouvernementReponseDuGouvernement
   extends Schema.CollectionType {
   collectionName: 'reponse_du_gouvernements';
@@ -1135,6 +1202,40 @@ export interface ApiThematiqueThematique extends Schema.CollectionType {
   };
 }
 
+export interface ApiWelcomePageNewWelcomePageNew extends Schema.CollectionType {
+  collectionName: 'welcome_page_news';
+  info: {
+    singularName: 'welcome-page-new';
+    pluralName: 'welcome-page-news';
+    displayName: 'Welcome page - News';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    message: Attribute.Blocks & Attribute.Required;
+    call_to_action: Attribute.String & Attribute.Required;
+    date_de_debut: Attribute.DateTime & Attribute.Required;
+    page_route_mobile: Attribute.String & Attribute.Required;
+    page_route_argument_mobile: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::welcome-page-new.welcome-page-new',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::welcome-page-new.welcome-page-new',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1153,13 +1254,16 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::charte-participation.charte-participation': ApiCharteParticipationCharteParticipation;
       'api::consultation.consultation': ApiConsultationConsultation;
       'api::consultation-apres-reponse-ou-terminee.consultation-apres-reponse-ou-terminee': ApiConsultationApresReponseOuTermineeConsultationApresReponseOuTerminee;
       'api::consultation-avant-reponse.consultation-avant-reponse': ApiConsultationAvantReponseConsultationAvantReponse;
       'api::consultation-contenu-a-venir.consultation-contenu-a-venir': ApiConsultationContenuAVenirConsultationContenuAVenir;
       'api::consultation-contenu-autre.consultation-contenu-autre': ApiConsultationContenuAutreConsultationContenuAutre;
+      'api::qa-g-headers-onglet.qa-g-headers-onglet': ApiQaGHeadersOngletQaGHeadersOnglet;
       'api::reponse-du-gouvernement.reponse-du-gouvernement': ApiReponseDuGouvernementReponseDuGouvernement;
       'api::thematique.thematique': ApiThematiqueThematique;
+      'api::welcome-page-new.welcome-page-new': ApiWelcomePageNewWelcomePageNew;
     }
   }
 }
