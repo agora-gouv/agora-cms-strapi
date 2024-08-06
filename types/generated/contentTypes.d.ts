@@ -877,6 +877,7 @@ export interface ApiConsultationConsultation extends Schema.CollectionType {
     datetime_de_debut: Attribute.DateTime & Attribute.Required;
     datetime_de_fin: Attribute.DateTime & Attribute.Required;
     titre_consultation: Attribute.String & Attribute.Required;
+    slug: Attribute.String & Attribute.Required & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -941,6 +942,7 @@ export interface ApiConsultationApresReponseOuTermineeConsultationApresReponseOu
       ]
     > &
       Attribute.Required;
+    slug: Attribute.String & Attribute.Required & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -987,6 +989,7 @@ export interface ApiConsultationAvantReponseConsultationAvantReponse
       ]
     > &
       Attribute.Required;
+    slug: Attribute.String & Attribute.Required & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1069,6 +1072,7 @@ export interface ApiConsultationContenuAutreConsultationContenuAutre
     historique_titre: Attribute.String & Attribute.Required;
     historique_call_to_action: Attribute.String & Attribute.Required;
     datetime_publication: Attribute.DateTime & Attribute.Required;
+    slug: Attribute.String & Attribute.Required & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
