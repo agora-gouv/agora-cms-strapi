@@ -59,6 +59,11 @@
     "datetime_publication": {
       "type": "datetime",
       "required": true
+    },
+    "slug": {
+      "type": "string",
+      "unique": true,
+      "required": true
     }
   }
 }
