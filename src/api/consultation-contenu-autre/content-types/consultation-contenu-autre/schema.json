@@ -4,7 +4,7 @@
   "info": {
     "singularName": "consultation-contenu-autre",
     "pluralName": "consultations-contenu-autre",
-    "displayName": "Consultation - Contenu autre",
+    "displayName": "4 Consultation - Contenu autre",
     "description": ""
   },
   "options": {
@@ -63,7 +63,8 @@
     "slug": {
       "type": "string",
       "unique": false,
-      "required": true
+      "required": true,
+      "regex": "^[a-z-]*$"
     }
   }
 }

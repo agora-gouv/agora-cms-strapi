@@ -4,7 +4,8 @@
   "info": {
     "singularName": "welcome-page-new",
     "pluralName": "welcome-page-news",
-    "displayName": "Welcome page - News"
+    "displayName": "Welcome page - News",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -29,6 +30,15 @@
     },
     "page_route_argument_mobile": {
       "type": "string"
+    },
+    "page_route_mobile_enum": {
+      "type": "enumeration",
+      "enum": [
+        "/consultationsPage",
+        "/qagsPage"
+      ],
+      "default": "/consultationsPage",
+      "required": true
     }
   }
 }
