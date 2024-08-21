@@ -4,7 +4,7 @@
   "info": {
     "singularName": "consultation-contenu-autre",
     "pluralName": "consultations-contenu-autre",
-    "displayName": "4 Consultation - Contenu autre",
+    "displayName": "6 Consultation - Contenu autre",
     "description": ""
   },
   "options": {
@@ -14,7 +14,8 @@
   "attributes": {
     "message_mise_a_jour": {
       "type": "string",
-      "required": true
+      "required": true,
+      "default": "Analyse disponible"
     },
     "lien_telechargement_analyse": {
       "type": "string",
@@ -22,7 +23,8 @@
     },
     "template_partage": {
       "type": "string",
-      "required": true
+      "required": true,
+      "default": "Cela peut t’intéresser : l’analyse des réponses de la consultation {title} {url}"
     },
     "feedback_pictogramme": {
       "type": "string",

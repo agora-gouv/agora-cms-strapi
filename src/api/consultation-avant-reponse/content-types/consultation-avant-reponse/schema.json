@@ -14,15 +14,18 @@
   "attributes": {
     "template_partage": {
       "type": "string",
-      "required": true
+      "required": true,
+      "default": "Comme moi, tu peux participer à la Consultation : {title} {url}"
     },
     "historique_titre": {
       "type": "string",
-      "required": true
+      "required": true,
+      "default": "Lancement"
     },
     "historique_call_to_action": {
       "type": "string",
-      "required": true
+      "required": true,
+      "default": "Voir les objectifs"
     },
     "sections": {
       "type": "dynamiczone",
@@ -40,7 +43,20 @@
     "slug": {
       "type": "string",
       "required": true,
-      "unique": false
+      "unique": false,
+      "default": "lancement"
+    },
+    "commanditaire": {
+      "type": "blocks",
+      "required": true
+    },
+    "objectif": {
+      "type": "blocks",
+      "required": true
+    },
+    "axe_gouvernemental": {
+      "type": "blocks",
+      "required": true
     }
   }
 }

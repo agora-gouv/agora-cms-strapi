@@ -913,7 +913,8 @@ export interface ApiConsultationApresReponseOuTermineeConsultationApresReponseOu
   };
   attributes: {
     template_partage_avant_fin_consultation: Attribute.String &
-      Attribute.Required;
+      Attribute.Required &
+      Attribute.DefaultTo<'Comme moi, tu peux participer \u00E0 la Consultation\u00A0: {title} {url}'>;
     encart_visualisation_resultat_avant_fin_consultation_picto: Attribute.String &
       Attribute.Required;
     encart_visualisation_resultat_avant_fin_consultation_desc: Attribute.Blocks &
@@ -921,7 +922,8 @@ export interface ApiConsultationApresReponseOuTermineeConsultationApresReponseOu
     encart_visualisation_resultat_avant_fin_consultation_cta: Attribute.String &
       Attribute.Required;
     template_partage_apres_fin_consultation: Attribute.String &
-      Attribute.Required;
+      Attribute.Required &
+      Attribute.DefaultTo<'Les premiers r\u00E9sultats de la consultation {title} : {url}'>;
     encart_visualisation_resultat_apres_fin_consultation_picto: Attribute.String &
       Attribute.Required;
     encart_visualisation_resultat_apres_fin_consultation_desc: Attribute.Blocks &
@@ -931,8 +933,12 @@ export interface ApiConsultationApresReponseOuTermineeConsultationApresReponseOu
     feedback_pictogramme: Attribute.String & Attribute.Required;
     feedback_titre: Attribute.String & Attribute.Required;
     feedback_description: Attribute.Blocks & Attribute.Required;
-    historique_titre: Attribute.String & Attribute.Required;
-    historique_call_to_action: Attribute.String & Attribute.Required;
+    historique_titre: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Fin de consultation'>;
+    historique_call_to_action: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Consulter toutes les r\u00E9ponses'>;
     sections: Attribute.DynamicZone<
       [
         'consultation-section.section-chiffre',
@@ -945,7 +951,9 @@ export interface ApiConsultationApresReponseOuTermineeConsultationApresReponseOu
       ]
     > &
       Attribute.Required;
-    slug: Attribute.String & Attribute.Required;
+    slug: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'fin-de-la-consultation'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -977,9 +985,15 @@ export interface ApiConsultationAvantReponseConsultationAvantReponse
     draftAndPublish: true;
   };
   attributes: {
-    template_partage: Attribute.String & Attribute.Required;
-    historique_titre: Attribute.String & Attribute.Required;
-    historique_call_to_action: Attribute.String & Attribute.Required;
+    template_partage: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Comme moi, tu peux participer \u00E0 la Consultation\u00A0: {title} {url}'>;
+    historique_titre: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Lancement'>;
+    historique_call_to_action: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Voir les objectifs'>;
     sections: Attribute.DynamicZone<
       [
         'consultation-section.section-chiffre',
@@ -992,7 +1006,12 @@ export interface ApiConsultationAvantReponseConsultationAvantReponse
       ]
     > &
       Attribute.Required;
-    slug: Attribute.String & Attribute.Required;
+    slug: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'lancement'>;
+    commanditaire: Attribute.Blocks & Attribute.Required;
+    objectif: Attribute.Blocks & Attribute.Required;
+    axe_gouvernemental: Attribute.Blocks & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1017,7 +1036,7 @@ export interface ApiConsultationContenuAVenirConsultationContenuAVenir
   info: {
     singularName: 'consultation-contenu-a-venir';
     pluralName: 'consultation-contenus-a-venir';
-    displayName: '5 Consultation - Contenu \u00E0 venir';
+    displayName: '7 Consultation - Contenu \u00E0 venir';
   };
   options: {
     draftAndPublish: true;
@@ -1042,22 +1061,57 @@ export interface ApiConsultationContenuAVenirConsultationContenuAVenir
   };
 }
 
+export interface ApiConsultationContenuAnalyseDesReponseConsultationContenuAnalyseDesReponse
+  extends Schema.CollectionType {
+  collectionName: 'consultation_contenu_analyse_des_reponses';
+  info: {
+    singularName: 'consultation-contenu-analyse-des-reponse';
+    pluralName: 'consultation-contenu-analyse-des-reponses';
+    displayName: '4 Consultation - Contenu analyse des r\u00E9ponses';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    lien_telechargement_analyse: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::consultation-contenu-analyse-des-reponse.consultation-contenu-analyse-des-reponse',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::consultation-contenu-analyse-des-reponse.consultation-contenu-analyse-des-reponse',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiConsultationContenuAutreConsultationContenuAutre
   extends Schema.CollectionType {
   collectionName: 'consultations_contenu_autre';
   info: {
     singularName: 'consultation-contenu-autre';
     pluralName: 'consultations-contenu-autre';
-    displayName: '4 Consultation - Contenu autre';
+    displayName: '6 Consultation - Contenu autre';
     description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    message_mise_a_jour: Attribute.String & Attribute.Required;
+    message_mise_a_jour: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Analyse disponible'>;
     lien_telechargement_analyse: Attribute.String;
-    template_partage: Attribute.String & Attribute.Required;
+    template_partage: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Cela peut t\u2019int\u00E9resser : l\u2019analyse des r\u00E9ponses de la consultation {title} {url}'>;
     feedback_pictogramme: Attribute.String & Attribute.Required;
     feedback_titre: Attribute.String & Attribute.Required;
     feedback_description: Attribute.Blocks & Attribute.Required;
@@ -1087,6 +1141,39 @@ export interface ApiConsultationContenuAutreConsultationContenuAutre
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::consultation-contenu-autre.consultation-contenu-autre',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiConsultationContenuReponseDuCommanditaireConsultationContenuReponseDuCommanditaire
+  extends Schema.CollectionType {
+  collectionName: 'consultation_contenu_reponse_du_commanditaires';
+  info: {
+    singularName: 'consultation-contenu-reponse-du-commanditaire';
+    pluralName: 'consultation-contenu-reponse-du-commanditaires';
+    displayName: '5 Consultation - Contenu r\u00E9ponse du commanditaire';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    template_partage: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Cela peut t\u2019int\u00E9resser : la r\u00E9ponse du gouvernement sur la consultation {title} {url}'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::consultation-contenu-reponse-du-commanditaire.consultation-contenu-reponse-du-commanditaire',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::consultation-contenu-reponse-du-commanditaire.consultation-contenu-reponse-du-commanditaire',
       'oneToOne',
       'admin::user'
     > &
@@ -1224,7 +1311,6 @@ export interface ApiWelcomePageNewWelcomePageNew extends Schema.CollectionType {
     message: Attribute.Blocks & Attribute.Required;
     call_to_action: Attribute.String & Attribute.Required;
     date_de_debut: Attribute.DateTime & Attribute.Required;
-    page_route_mobile: Attribute.String & Attribute.Required;
     page_route_argument_mobile: Attribute.String;
     page_route_mobile_enum: Attribute.Enumeration<
       ['/consultationsPage', '/qagsPage']
@@ -1272,7 +1358,9 @@ declare module '@strapi/types' {
       'api::consultation-apres-reponse-ou-terminee.consultation-apres-reponse-ou-terminee': ApiConsultationApresReponseOuTermineeConsultationApresReponseOuTerminee;
       'api::consultation-avant-reponse.consultation-avant-reponse': ApiConsultationAvantReponseConsultationAvantReponse;
       'api::consultation-contenu-a-venir.consultation-contenu-a-venir': ApiConsultationContenuAVenirConsultationContenuAVenir;
+      'api::consultation-contenu-analyse-des-reponse.consultation-contenu-analyse-des-reponse': ApiConsultationContenuAnalyseDesReponseConsultationContenuAnalyseDesReponse;
       'api::consultation-contenu-autre.consultation-contenu-autre': ApiConsultationContenuAutreConsultationContenuAutre;
+      'api::consultation-contenu-reponse-du-commanditaire.consultation-contenu-reponse-du-commanditaire': ApiConsultationContenuReponseDuCommanditaireConsultationContenuReponseDuCommanditaire;
       'api::qa-g-headers-onglet.qa-g-headers-onglet': ApiQaGHeadersOngletQaGHeadersOnglet;
       'api::reponse-du-gouvernement.reponse-du-gouvernement': ApiReponseDuGouvernementReponseDuGouvernement;
       'api::thematique.thematique': ApiThematiqueThematique;
