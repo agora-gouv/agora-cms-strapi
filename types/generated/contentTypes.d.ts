@@ -825,7 +825,7 @@ export interface ApiConsultationConsultation extends Schema.CollectionType {
   info: {
     singularName: 'consultation';
     pluralName: 'consultations';
-    displayName: 'Consultation';
+    displayName: '1 Consultation';
     description: '';
   };
   options: {
@@ -873,7 +873,10 @@ export interface ApiConsultationConsultation extends Schema.CollectionType {
       'oneToOne',
       'api::consultation-contenu-a-venir.consultation-contenu-a-venir'
     >;
-    flamme_label: Attribute.String;
+    flamme_label: Attribute.String &
+      Attribute.SetMinMaxLength<{
+        maxLength: 26;
+      }>;
     datetime_de_debut: Attribute.DateTime & Attribute.Required;
     datetime_de_fin: Attribute.DateTime & Attribute.Required;
     titre_consultation: Attribute.String & Attribute.Required;
@@ -902,7 +905,7 @@ export interface ApiConsultationApresReponseOuTermineeConsultationApresReponseOu
   info: {
     singularName: 'consultation-apres-reponse-ou-terminee';
     pluralName: 'consultation-apres-reponse-ou-terminees';
-    displayName: 'Consultation - Contenu apr\u00E8s r\u00E9ponse ou termin\u00E9e';
+    displayName: '3 Consultation - Contenu apr\u00E8s r\u00E9ponse ou termin\u00E9e';
     description: '';
   };
   options: {
@@ -967,7 +970,7 @@ export interface ApiConsultationAvantReponseConsultationAvantReponse
   info: {
     singularName: 'consultation-avant-reponse';
     pluralName: 'consultations-avant-reponse';
-    displayName: 'Consultation - Contenu avant r\u00E9ponse';
+    displayName: '2 Consultation - Contenu avant r\u00E9ponse';
     description: '';
   };
   options: {
@@ -1014,7 +1017,7 @@ export interface ApiConsultationContenuAVenirConsultationContenuAVenir
   info: {
     singularName: 'consultation-contenu-a-venir';
     pluralName: 'consultation-contenus-a-venir';
-    displayName: 'Consultation - Contenu \u00E0 venir';
+    displayName: '5 Consultation - Contenu \u00E0 venir';
   };
   options: {
     draftAndPublish: true;
@@ -1045,7 +1048,7 @@ export interface ApiConsultationContenuAutreConsultationContenuAutre
   info: {
     singularName: 'consultation-contenu-autre';
     pluralName: 'consultations-contenu-autre';
-    displayName: 'Consultation - Contenu autre';
+    displayName: '4 Consultation - Contenu autre';
     description: '';
   };
   options: {
@@ -1212,6 +1215,7 @@ export interface ApiWelcomePageNewWelcomePageNew extends Schema.CollectionType {
     singularName: 'welcome-page-new';
     pluralName: 'welcome-page-news';
     displayName: 'Welcome page - News';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1222,6 +1226,11 @@ export interface ApiWelcomePageNewWelcomePageNew extends Schema.CollectionType {
     date_de_debut: Attribute.DateTime & Attribute.Required;
     page_route_mobile: Attribute.String & Attribute.Required;
     page_route_argument_mobile: Attribute.String;
+    page_route_mobile_enum: Attribute.Enumeration<
+      ['/consultationsPage', '/qagsPage']
+    > &
+      Attribute.Required &
+      Attribute.DefaultTo<'/consultationsPage'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

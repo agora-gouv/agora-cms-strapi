@@ -4,7 +4,7 @@
   "info": {
     "singularName": "consultation",
     "pluralName": "consultations",
-    "displayName": "Consultation",
+    "displayName": "1 Consultation",
     "description": ""
   },
   "options": {
@@ -73,7 +73,8 @@
       "target": "api::consultation-contenu-a-venir.consultation-contenu-a-venir"
     },
     "flamme_label": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 26
     },
     "datetime_de_debut": {
       "type": "datetime",
