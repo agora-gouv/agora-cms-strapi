@@ -4,7 +4,7 @@
   "info": {
     "singularName": "consultation",
     "pluralName": "consultations",
-    "displayName": "1 Consultation",
+    "displayName": "1 Consultation - Squelette",
     "description": ""
   },
   "options": {
@@ -27,7 +27,8 @@
     },
     "nombre_de_questions": {
       "type": "integer",
-      "required": true
+      "required": true,
+      "min": 0
     },
     "estimation_nombre_de_questions": {
       "type": "string",
@@ -72,10 +73,6 @@
       "relation": "oneToOne",
       "target": "api::consultation-contenu-a-venir.consultation-contenu-a-venir"
     },
-    "flamme_label": {
-      "type": "string",
-      "maxLength": 26
-    },
     "datetime_de_debut": {
       "type": "datetime",
       "required": true
@@ -91,7 +88,18 @@
     "slug": {
       "type": "string",
       "required": true,
-      "unique": true
+      "unique": true,
+      "regex": "^[a-z-]*$"
+    },
+    "consultation_contenu_analyse_des_reponse": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::consultation-contenu-analyse-des-reponse.consultation-contenu-analyse-des-reponse"
+    },
+    "contenu_reponse_du_commanditaires": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::consultation-contenu-reponse-du-commanditaire.consultation-contenu-reponse-du-commanditaire"
     }
   }
 }

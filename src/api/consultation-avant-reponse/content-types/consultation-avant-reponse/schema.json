@@ -4,11 +4,11 @@
   "info": {
     "singularName": "consultation-avant-reponse",
     "pluralName": "consultations-avant-reponse",
-    "displayName": "2 Consultation - Contenu avant réponse",
+    "displayName": "2 Consultation - Présentation",
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -55,6 +55,14 @@
       "required": true
     },
     "axe_gouvernemental": {
+      "type": "blocks",
+      "required": true
+    },
+    "nom_strapi": {
+      "type": "string",
+      "required": true
+    },
+    "presentation": {
       "type": "blocks",
       "required": true
     }

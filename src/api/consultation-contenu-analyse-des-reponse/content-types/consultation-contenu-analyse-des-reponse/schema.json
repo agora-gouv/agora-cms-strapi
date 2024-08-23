@@ -1,0 +1,72 @@
+{
+  "kind": "collectionType",
+  "collectionName": "consultation_contenu_analyse_des_reponses",
+  "info": {
+    "singularName": "consultation-contenu-analyse-des-reponse",
+    "pluralName": "consultation-contenu-analyse-des-reponses",
+    "displayName": "4 Consultation - Analyse des réponses",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "lien_telechargement_analyse": {
+      "type": "string",
+      "required": true
+    },
+    "template_partage": {
+      "type": "string",
+      "default": "Cela peut t’intéresser : l’analyse des réponses de la consultation {title} {url}",
+      "required": true
+    },
+    "sections": {
+      "type": "dynamiczone",
+      "components": [
+        "consultation-section.section-accordeon",
+        "consultation-section.section-chiffre",
+        "consultation-section.section-citation",
+        "consultation-section.section-image",
+        "consultation-section.section-texte-riche",
+        "consultation-section.section-titre",
+        "consultation-section.section-video"
+      ],
+      "required": true
+    },
+    "datetime_publication": {
+      "type": "datetime",
+      "required": true
+    },
+    "slug": {
+      "type": "string",
+      "default": "analyse-disponible",
+      "required": true,
+      "regex": "^[a-z-]*$"
+    },
+    "feedback_message": {
+      "type": "string",
+      "default": "Êtes-vous satisfait(e) de l'analyse de cette consultation ?",
+      "required": true
+    },
+    "nom_strapi": {
+      "type": "string",
+      "required": true
+    },
+    "historique_titre": {
+      "type": "string",
+      "required": true,
+      "default": "Analyse des réponses"
+    },
+    "historique_call_to_action": {
+      "type": "string",
+      "required": true,
+      "default": "Consulter la synthèse"
+    },
+    "flamme_label": {
+      "type": "string",
+      "required": false,
+      "maxLength": 26
+    }
+  }
+}

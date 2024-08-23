@@ -4,59 +4,18 @@
   "info": {
     "singularName": "consultation-apres-reponse-ou-terminee",
     "pluralName": "consultation-apres-reponse-ou-terminees",
-    "displayName": "3 Consultation - Contenu après réponse ou terminée",
+    "displayName": "3 Consultation - Pour aller plus loin",
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
-    "template_partage_avant_fin_consultation": {
+    "template_partage": {
       "type": "string",
       "required": true,
       "default": "Comme moi, tu peux participer à la Consultation : {title} {url}"
-    },
-    "encart_visualisation_resultat_avant_fin_consultation_picto": {
-      "type": "string",
-      "required": true
-    },
-    "encart_visualisation_resultat_avant_fin_consultation_desc": {
-      "type": "blocks",
-      "required": true
-    },
-    "encart_visualisation_resultat_avant_fin_consultation_cta": {
-      "type": "string",
-      "required": true
-    },
-    "template_partage_apres_fin_consultation": {
-      "type": "string",
-      "required": true,
-      "default": "Les premiers résultats de la consultation {title} : {url}"
-    },
-    "encart_visualisation_resultat_apres_fin_consultation_picto": {
-      "type": "string",
-      "required": true
-    },
-    "encart_visualisation_resultat_apres_fin_consultation_desc": {
-      "type": "blocks",
-      "required": true
-    },
-    "encart_visualisation_resultat_apres_fin_consultation_cta": {
-      "type": "string",
-      "required": true
-    },
-    "feedback_pictogramme": {
-      "type": "string",
-      "required": true
-    },
-    "feedback_titre": {
-      "type": "string",
-      "required": true
-    },
-    "feedback_description": {
-      "type": "blocks",
-      "required": true
     },
     "historique_titre": {
       "type": "string",
@@ -86,6 +45,15 @@
       "unique": false,
       "required": true,
       "default": "fin-de-la-consultation"
+    },
+    "feedback_message": {
+      "type": "string",
+      "default": "Êtes-vous satisfait(e) de cette consultation ?",
+      "required": true
+    },
+    "nom_strapi": {
+      "type": "string",
+      "required": true
     }
   }
 }

@@ -825,7 +825,7 @@ export interface ApiConsultationConsultation extends Schema.CollectionType {
   info: {
     singularName: 'consultation';
     pluralName: 'consultations';
-    displayName: '1 Consultation';
+    displayName: '1 Consultation - Squelette';
     description: '';
   };
   options: {
@@ -839,7 +839,14 @@ export interface ApiConsultationConsultation extends Schema.CollectionType {
     >;
     url_image_de_couverture: Attribute.String & Attribute.Required;
     url_image_page_de_contenu: Attribute.String & Attribute.Required;
-    nombre_de_questions: Attribute.Integer & Attribute.Required;
+    nombre_de_questions: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      >;
     estimation_nombre_de_questions: Attribute.String & Attribute.Required;
     estimation_temps: Attribute.String & Attribute.Required;
     nombre_participants_cible: Attribute.Integer & Attribute.Required;
@@ -873,14 +880,20 @@ export interface ApiConsultationConsultation extends Schema.CollectionType {
       'oneToOne',
       'api::consultation-contenu-a-venir.consultation-contenu-a-venir'
     >;
-    flamme_label: Attribute.String &
-      Attribute.SetMinMaxLength<{
-        maxLength: 26;
-      }>;
     datetime_de_debut: Attribute.DateTime & Attribute.Required;
     datetime_de_fin: Attribute.DateTime & Attribute.Required;
     titre_consultation: Attribute.String & Attribute.Required;
     slug: Attribute.String & Attribute.Required & Attribute.Unique;
+    consultation_contenu_analyse_des_reponse: Attribute.Relation<
+      'api::consultation.consultation',
+      'oneToOne',
+      'api::consultation-contenu-analyse-des-reponse.consultation-contenu-analyse-des-reponse'
+    >;
+    contenu_reponse_du_commanditaires: Attribute.Relation<
+      'api::consultation.consultation',
+      'oneToOne',
+      'api::consultation-contenu-reponse-du-commanditaire.consultation-contenu-reponse-du-commanditaire'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -905,34 +918,16 @@ export interface ApiConsultationApresReponseOuTermineeConsultationApresReponseOu
   info: {
     singularName: 'consultation-apres-reponse-ou-terminee';
     pluralName: 'consultation-apres-reponse-ou-terminees';
-    displayName: '3 Consultation - Contenu apr\u00E8s r\u00E9ponse ou termin\u00E9e';
+    displayName: '3 Consultation - Pour aller plus loin';
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
-    template_partage_avant_fin_consultation: Attribute.String &
+    template_partage: Attribute.String &
       Attribute.Required &
       Attribute.DefaultTo<'Comme moi, tu peux participer \u00E0 la Consultation\u00A0: {title} {url}'>;
-    encart_visualisation_resultat_avant_fin_consultation_picto: Attribute.String &
-      Attribute.Required;
-    encart_visualisation_resultat_avant_fin_consultation_desc: Attribute.Blocks &
-      Attribute.Required;
-    encart_visualisation_resultat_avant_fin_consultation_cta: Attribute.String &
-      Attribute.Required;
-    template_partage_apres_fin_consultation: Attribute.String &
-      Attribute.Required &
-      Attribute.DefaultTo<'Les premiers r\u00E9sultats de la consultation {title} : {url}'>;
-    encart_visualisation_resultat_apres_fin_consultation_picto: Attribute.String &
-      Attribute.Required;
-    encart_visualisation_resultat_apres_fin_consultation_desc: Attribute.Blocks &
-      Attribute.Required;
-    encart_visualisation_resultat_apres_fin_consultation_cta: Attribute.String &
-      Attribute.Required;
-    feedback_pictogramme: Attribute.String & Attribute.Required;
-    feedback_titre: Attribute.String & Attribute.Required;
-    feedback_description: Attribute.Blocks & Attribute.Required;
     historique_titre: Attribute.String &
       Attribute.Required &
       Attribute.DefaultTo<'Fin de consultation'>;
@@ -954,9 +949,12 @@ export interface ApiConsultationApresReponseOuTermineeConsultationApresReponseOu
     slug: Attribute.String &
       Attribute.Required &
       Attribute.DefaultTo<'fin-de-la-consultation'>;
+    feedback_message: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'\u00CAtes-vous satisfait(e) de cette consultation ?'>;
+    nom_strapi: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::consultation-apres-reponse-ou-terminee.consultation-apres-reponse-ou-terminee',
       'oneToOne',
@@ -978,11 +976,11 @@ export interface ApiConsultationAvantReponseConsultationAvantReponse
   info: {
     singularName: 'consultation-avant-reponse';
     pluralName: 'consultations-avant-reponse';
-    displayName: '2 Consultation - Contenu avant r\u00E9ponse';
+    displayName: '2 Consultation - Pr\u00E9sentation';
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     template_partage: Attribute.String &
@@ -1012,9 +1010,10 @@ export interface ApiConsultationAvantReponseConsultationAvantReponse
     commanditaire: Attribute.Blocks & Attribute.Required;
     objectif: Attribute.Blocks & Attribute.Required;
     axe_gouvernemental: Attribute.Blocks & Attribute.Required;
+    nom_strapi: Attribute.String & Attribute.Required;
+    presentation: Attribute.Blocks & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::consultation-avant-reponse.consultation-avant-reponse',
       'oneToOne',
@@ -1036,16 +1035,15 @@ export interface ApiConsultationContenuAVenirConsultationContenuAVenir
   info: {
     singularName: 'consultation-contenu-a-venir';
     pluralName: 'consultation-contenus-a-venir';
-    displayName: '7 Consultation - Contenu \u00E0 venir';
+    displayName: '7 Consultation - \u00C0 venir';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     titre_historique: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::consultation-contenu-a-venir.consultation-contenu-a-venir',
       'oneToOne',
@@ -1067,16 +1065,49 @@ export interface ApiConsultationContenuAnalyseDesReponseConsultationContenuAnaly
   info: {
     singularName: 'consultation-contenu-analyse-des-reponse';
     pluralName: 'consultation-contenu-analyse-des-reponses';
-    displayName: '4 Consultation - Contenu analyse des r\u00E9ponses';
+    displayName: '4 Consultation - Analyse des r\u00E9ponses';
+    description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     lien_telechargement_analyse: Attribute.String & Attribute.Required;
+    template_partage: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Cela peut t\u2019int\u00E9resser : l\u2019analyse des r\u00E9ponses de la consultation {title} {url}'>;
+    sections: Attribute.DynamicZone<
+      [
+        'consultation-section.section-accordeon',
+        'consultation-section.section-chiffre',
+        'consultation-section.section-citation',
+        'consultation-section.section-image',
+        'consultation-section.section-texte-riche',
+        'consultation-section.section-titre',
+        'consultation-section.section-video'
+      ]
+    > &
+      Attribute.Required;
+    datetime_publication: Attribute.DateTime & Attribute.Required;
+    slug: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'analyse-disponible'>;
+    feedback_message: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<"\u00CAtes-vous satisfait(e) de l'analyse de cette consultation ?">;
+    nom_strapi: Attribute.String & Attribute.Required;
+    historique_titre: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Analyse des r\u00E9ponses'>;
+    historique_call_to_action: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Consulter la synth\u00E8se'>;
+    flamme_label: Attribute.String &
+      Attribute.SetMinMaxLength<{
+        maxLength: 26;
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::consultation-contenu-analyse-des-reponse.consultation-contenu-analyse-des-reponse',
       'oneToOne',
@@ -1098,23 +1129,16 @@ export interface ApiConsultationContenuAutreConsultationContenuAutre
   info: {
     singularName: 'consultation-contenu-autre';
     pluralName: 'consultations-contenu-autre';
-    displayName: '6 Consultation - Contenu autre';
+    displayName: '6 Consultation - Autre';
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
-    message_mise_a_jour: Attribute.String &
-      Attribute.Required &
-      Attribute.DefaultTo<'Analyse disponible'>;
-    lien_telechargement_analyse: Attribute.String;
     template_partage: Attribute.String &
       Attribute.Required &
       Attribute.DefaultTo<'Cela peut t\u2019int\u00E9resser : l\u2019analyse des r\u00E9ponses de la consultation {title} {url}'>;
-    feedback_pictogramme: Attribute.String & Attribute.Required;
-    feedback_titre: Attribute.String & Attribute.Required;
-    feedback_description: Attribute.Blocks & Attribute.Required;
     sections: Attribute.DynamicZone<
       [
         'consultation-section.section-chiffre',
@@ -1130,9 +1154,15 @@ export interface ApiConsultationContenuAutreConsultationContenuAutre
     historique_call_to_action: Attribute.String & Attribute.Required;
     datetime_publication: Attribute.DateTime & Attribute.Required;
     slug: Attribute.String & Attribute.Required;
+    feedback_message: Attribute.String &
+      Attribute.DefaultTo<'\u00CAtes-vous satisfait(e) de cette consultation ?'>;
+    nom_strapi: Attribute.String & Attribute.Required;
+    flamme_label: Attribute.String &
+      Attribute.SetMinMaxLength<{
+        maxLength: 26;
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::consultation-contenu-autre.consultation-contenu-autre',
       'oneToOne',
@@ -1150,22 +1180,52 @@ export interface ApiConsultationContenuAutreConsultationContenuAutre
 
 export interface ApiConsultationContenuReponseDuCommanditaireConsultationContenuReponseDuCommanditaire
   extends Schema.CollectionType {
-  collectionName: 'consultation_contenu_reponse_du_commanditaires';
+  collectionName: 'contenu_reponse_du_commanditaires';
   info: {
     singularName: 'consultation-contenu-reponse-du-commanditaire';
     pluralName: 'consultation-contenu-reponse-du-commanditaires';
-    displayName: '5 Consultation - Contenu r\u00E9ponse du commanditaire';
+    displayName: '5 Consultation - R\u00E9ponse du commanditaire';
+    description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     template_partage: Attribute.String &
       Attribute.Required &
       Attribute.DefaultTo<'Cela peut t\u2019int\u00E9resser : la r\u00E9ponse du gouvernement sur la consultation {title} {url}'>;
+    sections: Attribute.DynamicZone<
+      [
+        'consultation-section.section-accordeon',
+        'consultation-section.section-chiffre',
+        'consultation-section.section-citation',
+        'consultation-section.section-image',
+        'consultation-section.section-texte-riche',
+        'consultation-section.section-titre',
+        'consultation-section.section-video'
+      ]
+    > &
+      Attribute.Required;
+    datetime_publication: Attribute.DateTime & Attribute.Required;
+    slug: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'reponse-du-gouvernement'>;
+    feedback_message: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'\u00CAtes-vous satisfait(e) de la r\u00E9ponse de la ministre ?'>;
+    nom_strapi: Attribute.String & Attribute.Required;
+    historique_titre: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'R\u00E9ponse du Gouvernement'>;
+    historique_call_to_action: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Actions mises en place'>;
+    flamme_label: Attribute.String &
+      Attribute.SetMinMaxLength<{
+        maxLength: 26;
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::consultation-contenu-reponse-du-commanditaire.consultation-contenu-reponse-du-commanditaire',
       'oneToOne',
