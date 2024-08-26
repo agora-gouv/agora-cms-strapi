@@ -1,0 +1,2 @@
+ALTER SEQUENCE consultation_contenu_analyse_des_reponses_id_seq RESTART WITH 30000;
+ALTER SEQUENCE contenu_reponse_du_commanditaires_id_seq RESTART WITH 36000;
