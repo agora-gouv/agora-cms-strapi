@@ -24,10 +24,6 @@
       "type": "datetime",
       "required": true
     },
-    "page_route_mobile": {
-      "type": "string",
-      "required": true
-    },
     "page_route_argument_mobile": {
       "type": "string"
     },

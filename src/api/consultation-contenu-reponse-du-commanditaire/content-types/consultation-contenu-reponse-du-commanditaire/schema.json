@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "consultations_contenu_autre",
+  "collectionName": "contenu_reponse_du_commanditaires",
   "info": {
-    "singularName": "consultation-contenu-autre",
-    "pluralName": "consultations-contenu-autre",
-    "displayName": "6 Consultation - Autre",
+    "singularName": "consultation-contenu-reponse-du-commanditaire",
+    "pluralName": "consultation-contenu-reponse-du-commanditaires",
+    "displayName": "5 Consultation - Réponse du commanditaire",
     "description": ""
   },
   "options": {
@@ -15,26 +15,19 @@
     "template_partage": {
       "type": "string",
       "required": true,
-      "default": "Cela peut t’intéresser : l’analyse des réponses de la consultation {title} {url}"
+      "default": "Cela peut t’intéresser : la réponse du gouvernement sur la consultation {title} {url}"
     },
     "sections": {
       "type": "dynamiczone",
       "components": [
+        "consultation-section.section-accordeon",
         "consultation-section.section-chiffre",
         "consultation-section.section-citation",
         "consultation-section.section-image",
         "consultation-section.section-texte-riche",
         "consultation-section.section-titre",
-        "consultation-section.section-video",
-        "consultation-section.section-accordeon"
-      ]
-    },
-    "historique_titre": {
-      "type": "string",
-      "required": true
-    },
-    "historique_call_to_action": {
-      "type": "string",
+        "consultation-section.section-video"
+      ],
       "required": true
     },
     "datetime_publication": {
@@ -43,18 +36,28 @@
     },
     "slug": {
       "type": "string",
-      "unique": false,
       "required": true,
+      "default": "reponse-du-gouvernement",
       "regex": "^[a-z-]*$"
     },
     "feedback_message": {
       "type": "string",
-      "required": false,
-      "default": "Êtes-vous satisfait(e) de cette consultation ?"
+      "required": true,
+      "default": "Êtes-vous satisfait(e) de la réponse de la ministre ?"
     },
     "nom_strapi": {
       "type": "string",
       "required": true
+    },
+    "historique_titre": {
+      "type": "string",
+      "default": "Réponse du Gouvernement",
+      "required": true
+    },
+    "historique_call_to_action": {
+      "type": "string",
+      "required": true,
+      "default": "Actions mises en place"
     },
     "flamme_label": {
       "type": "string",

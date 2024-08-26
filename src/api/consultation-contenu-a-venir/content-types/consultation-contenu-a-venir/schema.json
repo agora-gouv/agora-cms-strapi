@@ -4,10 +4,10 @@
   "info": {
     "singularName": "consultation-contenu-a-venir",
     "pluralName": "consultation-contenus-a-venir",
-    "displayName": "5 Consultation - Contenu à venir"
+    "displayName": "7 Consultation - À venir"
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
