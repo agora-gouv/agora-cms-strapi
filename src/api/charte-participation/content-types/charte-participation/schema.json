@@ -4,7 +4,8 @@
   "info": {
     "singularName": "charte-participation",
     "pluralName": "charte-participations",
-    "displayName": "Charte participation"
+    "displayName": "Charte participation",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,10 +14,14 @@
   "attributes": {
     "charte": {
       "type": "blocks",
-      "required": false
+      "required": true
     },
     "datetime_debut": {
       "type": "datetime",
+      "required": true
+    },
+    "charte_preview": {
+      "type": "blocks",
       "required": true
     }
   }

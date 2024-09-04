@@ -795,13 +795,15 @@ export interface ApiCharteParticipationCharteParticipation
     singularName: 'charte-participation';
     pluralName: 'charte-participations';
     displayName: 'Charte participation';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    charte: Attribute.Blocks;
+    charte: Attribute.Blocks & Attribute.Required;
     datetime_debut: Attribute.DateTime & Attribute.Required;
+    charte_preview: Attribute.Blocks & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
