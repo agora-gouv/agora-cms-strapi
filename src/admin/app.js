@@ -1,13 +1,14 @@
-import AuthLogo from "./extensions/agora-logo.svg";
+import LogoProd from "./extensions/agora-logo-prod.svg";
+import LogoDev from "./extensions/agora-logo-dev.png";
 import favicon from "./extensions/agora-favicon.ico";
 
 const config = {
   locales: ['fr', 'en'],
   auth: {
-    logo: AuthLogo,
+    logo: process.env.STRAPI_ADMIN_ENV === 'production' ? LogoProd : LogoDev,
   },
   menu: {
-    logo: AuthLogo,
+    logo: process.env.STRAPI_ADMIN_ENV === 'production' ? LogoProd : LogoDev,
   },
   head: {
     favicon: favicon,
