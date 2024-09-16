@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "concertations",
+  "info": {
+    "singularName": "concertation",
+    "pluralName": "concertations",
+    "displayName": "Concertation"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titre": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "image_url": {
+      "type": "string",
+      "required": true
+    },
+    "datetime_publication": {
+      "type": "datetime",
+      "required": true
+    },
+    "thematique": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::thematique.thematique"
+    },
+    "flamme_label": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

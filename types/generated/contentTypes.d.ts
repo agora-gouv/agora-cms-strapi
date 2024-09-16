@@ -822,6 +822,44 @@ export interface ApiCharteParticipationCharteParticipation
   };
 }
 
+export interface ApiConcertationConcertation extends Schema.CollectionType {
+  collectionName: 'concertations';
+  info: {
+    singularName: 'concertation';
+    pluralName: 'concertations';
+    displayName: 'Concertation';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    titre: Attribute.String & Attribute.Required;
+    url: Attribute.String & Attribute.Required;
+    image_url: Attribute.String & Attribute.Required;
+    datetime_publication: Attribute.DateTime & Attribute.Required;
+    thematique: Attribute.Relation<
+      'api::concertation.concertation',
+      'oneToOne',
+      'api::thematique.thematique'
+    >;
+    flamme_label: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::concertation.concertation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::concertation.concertation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiConsultationConsultation extends Schema.CollectionType {
   collectionName: 'consultations';
   info: {
@@ -1544,6 +1582,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::charte-participation.charte-participation': ApiCharteParticipationCharteParticipation;
+      'api::concertation.concertation': ApiConcertationConcertation;
       'api::consultation.consultation': ApiConsultationConsultation;
       'api::consultation-apres-reponse-ou-terminee.consultation-apres-reponse-ou-terminee': ApiConsultationApresReponseOuTermineeConsultationApresReponseOuTerminee;
       'api::consultation-avant-reponse.consultation-avant-reponse': ApiConsultationAvantReponseConsultationAvantReponse;
