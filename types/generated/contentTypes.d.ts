@@ -828,6 +828,7 @@ export interface ApiConcertationConcertation extends Schema.CollectionType {
     singularName: 'concertation';
     pluralName: 'concertations';
     displayName: 'Concertation';
+    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -842,7 +843,7 @@ export interface ApiConcertationConcertation extends Schema.CollectionType {
       'oneToOne',
       'api::thematique.thematique'
     >;
-    flamme_label: Attribute.String & Attribute.Required;
+    flamme_label: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
