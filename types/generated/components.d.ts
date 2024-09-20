@@ -107,7 +107,7 @@ export interface QuestionDeConsultationChoix extends Schema.Component {
     description: '';
   };
   attributes: {
-    label: Attribute.String;
+    label: Attribute.String & Attribute.Required;
     ouvert: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
   };
 }
