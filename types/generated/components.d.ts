@@ -123,6 +123,7 @@ export interface QuestionDeConsultationDescription extends Schema.Component {
     numero: Attribute.Integer & Attribute.Required;
     description: Attribute.Blocks & Attribute.Required;
     question_suivante: Attribute.Integer;
+    url_image: Attribute.String;
   };
 }
 

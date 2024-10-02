@@ -20,6 +20,9 @@
     },
     "question_suivante": {
       "type": "integer"
+    },
+    "url_image": {
+      "type": "string"
     }
   }
 }
