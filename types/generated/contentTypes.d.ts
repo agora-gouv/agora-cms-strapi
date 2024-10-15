@@ -1411,6 +1411,99 @@ export interface ApiConsultationContenuReponseDuCommanditaireConsultationContenu
   };
 }
 
+export interface ApiPagePoserMaQuestionPagePoserMaQuestion
+  extends Schema.SingleType {
+  collectionName: 'page_poser_ma_questions';
+  info: {
+    singularName: 'page-poser-ma-question';
+    pluralName: 'page-poser-ma-questions';
+    displayName: 'Page poser ma question';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    texte_regles: Attribute.Blocks & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::page-poser-ma-question.page-poser-ma-question',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::page-poser-ma-question.page-poser-ma-question',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPageQuestionsAuGouvernementPageQuestionsAuGouvernement
+  extends Schema.SingleType {
+  collectionName: 'page_questions_au_gouvernements';
+  info: {
+    singularName: 'page-questions-au-gouvernement';
+    pluralName: 'page-questions-au-gouvernements';
+    displayName: 'Page questions au gouvernement';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    information_bottomsheet: Attribute.Text & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::page-questions-au-gouvernement.page-questions-au-gouvernement',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::page-questions-au-gouvernement.page-questions-au-gouvernement',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPageReponseAuxQuestionsAuGouvernementPageReponseAuxQuestionsAuGouvernement
+  extends Schema.SingleType {
+  collectionName: 'page_reponse_aux_questions_au_gouvernements';
+  info: {
+    singularName: 'page-reponse-aux-questions-au-gouvernement';
+    pluralName: 'page-reponse-aux-questions-au-gouvernements';
+    displayName: 'Page r\u00E9ponse aux questions au gouvernement';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    information_reponse_a_venir_bottomsheet: Attribute.Text &
+      Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::page-reponse-aux-questions-au-gouvernement.page-reponse-aux-questions-au-gouvernement',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::page-reponse-aux-questions-au-gouvernement.page-reponse-aux-questions-au-gouvernement',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiQaGHeadersOngletQaGHeadersOnglet
   extends Schema.CollectionType {
   collectionName: 'qa_g_headers_onglets';
@@ -1592,6 +1685,9 @@ declare module '@strapi/types' {
       'api::consultation-contenu-analyse-des-reponse.consultation-contenu-analyse-des-reponse': ApiConsultationContenuAnalyseDesReponseConsultationContenuAnalyseDesReponse;
       'api::consultation-contenu-autre.consultation-contenu-autre': ApiConsultationContenuAutreConsultationContenuAutre;
       'api::consultation-contenu-reponse-du-commanditaire.consultation-contenu-reponse-du-commanditaire': ApiConsultationContenuReponseDuCommanditaireConsultationContenuReponseDuCommanditaire;
+      'api::page-poser-ma-question.page-poser-ma-question': ApiPagePoserMaQuestionPagePoserMaQuestion;
+      'api::page-questions-au-gouvernement.page-questions-au-gouvernement': ApiPageQuestionsAuGouvernementPageQuestionsAuGouvernement;
+      'api::page-reponse-aux-questions-au-gouvernement.page-reponse-aux-questions-au-gouvernement': ApiPageReponseAuxQuestionsAuGouvernementPageReponseAuxQuestionsAuGouvernement;
       'api::qa-g-headers-onglet.qa-g-headers-onglet': ApiQaGHeadersOngletQaGHeadersOnglet;
       'api::reponse-du-gouvernement.reponse-du-gouvernement': ApiReponseDuGouvernementReponseDuGouvernement;
       'api::thematique.thematique': ApiThematiqueThematique;
