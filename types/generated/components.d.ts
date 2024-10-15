@@ -210,6 +210,9 @@ export interface ReponseReponseVideo extends Schema.Component {
     informationAdditionnelleTitre: Attribute.String;
     transcription: Attribute.Text & Attribute.Required;
     informationAdditionnelleDescription: Attribute.Blocks;
+    page_title: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'R\u00E9ponse du Gouvernement'>;
   };
 }
 

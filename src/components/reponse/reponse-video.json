@@ -32,6 +32,11 @@
     },
     "informationAdditionnelleDescription": {
       "type": "blocks"
+    },
+    "page_title": {
+      "type": "string",
+      "required": true,
+      "default": "Réponse du Gouvernement"
     }
   }
 }

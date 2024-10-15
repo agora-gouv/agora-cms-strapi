@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "page_reponse_aux_questions_au_gouvernements",
+  "info": {
+    "singularName": "page-reponse-aux-questions-au-gouvernement",
+    "pluralName": "page-reponse-aux-questions-au-gouvernements",
+    "displayName": "Page réponse aux questions au gouvernement",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "information_reponse_a_venir_bottomsheet": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

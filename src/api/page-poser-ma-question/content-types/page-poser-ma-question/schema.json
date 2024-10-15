@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "page_poser_ma_questions",
+  "info": {
+    "singularName": "page-poser-ma-question",
+    "pluralName": "page-poser-ma-questions",
+    "displayName": "Page poser ma question"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "texte_regles": {
+      "type": "blocks",
+      "required": true
+    }
+  }
+}
