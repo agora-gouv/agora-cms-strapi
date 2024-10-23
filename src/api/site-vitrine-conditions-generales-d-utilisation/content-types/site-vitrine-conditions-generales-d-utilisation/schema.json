@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "site_vitrine_conditions_generales_d_utilisations",
+  "info": {
+    "singularName": "site-vitrine-conditions-generales-d-utilisation",
+    "pluralName": "site-vitrine-conditions-generales-d-utilisations",
+    "displayName": "Site vitrine - Conditions générales d'utilisation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "conditions_generales_d_utilisation": {
+      "type": "blocks",
+      "required": true
+    }
+  }
+}

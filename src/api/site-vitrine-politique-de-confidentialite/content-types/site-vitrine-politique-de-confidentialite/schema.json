@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "site_vitrine_politique_de_confidentialites",
+  "info": {
+    "singularName": "site-vitrine-politique-de-confidentialite",
+    "pluralName": "site-vitrine-politique-de-confidentialites",
+    "displayName": "Site vitrine - Politique de confidentialité"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "politique_de_confidentialite": {
+      "type": "blocks",
+      "required": true
+    }
+  }
+}

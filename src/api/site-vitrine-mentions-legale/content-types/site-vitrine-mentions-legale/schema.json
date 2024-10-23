@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "site_vitrine_mentions_legales",
+  "info": {
+    "singularName": "site-vitrine-mentions-legale",
+    "pluralName": "site-vitrine-mentions-legales",
+    "displayName": "Site vitrine - Mentions légales"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "mentions_legales": {
+      "type": "blocks",
+      "required": true
+    }
+  }
+}

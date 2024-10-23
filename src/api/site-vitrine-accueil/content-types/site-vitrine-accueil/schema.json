@@ -1,0 +1,43 @@
+{
+  "kind": "singleType",
+  "collectionName": "site_vitrine_accueils",
+  "info": {
+    "singularName": "site-vitrine-accueil",
+    "pluralName": "site-vitrine-accueils",
+    "displayName": "Site vitrine - accueil"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titre_header": {
+      "type": "string",
+      "required": true
+    },
+    "sous_titre_header": {
+      "type": "string",
+      "required": true
+    },
+    "titre_body": {
+      "type": "string",
+      "required": true
+    },
+    "description_body": {
+      "type": "text",
+      "required": true
+    },
+    "texte_image_1": {
+      "type": "blocks",
+      "required": true
+    },
+    "texte_image_2": {
+      "type": "blocks",
+      "required": true
+    },
+    "texte_image_3": {
+      "type": "blocks",
+      "required": true
+    }
+  }
+}

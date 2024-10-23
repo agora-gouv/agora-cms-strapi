@@ -1586,6 +1586,226 @@ export interface ApiReponseDuGouvernementReponseDuGouvernement
   };
 }
 
+export interface ApiSiteVitrineAccueilSiteVitrineAccueil
+  extends Schema.SingleType {
+  collectionName: 'site_vitrine_accueils';
+  info: {
+    singularName: 'site-vitrine-accueil';
+    pluralName: 'site-vitrine-accueils';
+    displayName: 'Site vitrine - accueil';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    titre_header: Attribute.String & Attribute.Required;
+    sous_titre_header: Attribute.String & Attribute.Required;
+    titre_body: Attribute.String & Attribute.Required;
+    description_body: Attribute.Text & Attribute.Required;
+    texte_image_1: Attribute.Blocks & Attribute.Required;
+    texte_image_2: Attribute.Blocks & Attribute.Required;
+    texte_image_3: Attribute.Blocks & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::site-vitrine-accueil.site-vitrine-accueil',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::site-vitrine-accueil.site-vitrine-accueil',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSiteVitrineConditionsGeneralesDUtilisationSiteVitrineConditionsGeneralesDUtilisation
+  extends Schema.SingleType {
+  collectionName: 'site_vitrine_conditions_generales_d_utilisations';
+  info: {
+    singularName: 'site-vitrine-conditions-generales-d-utilisation';
+    pluralName: 'site-vitrine-conditions-generales-d-utilisations';
+    displayName: "Site vitrine - Conditions g\u00E9n\u00E9rales d'utilisation";
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    conditions_generales_d_utilisation: Attribute.Blocks & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::site-vitrine-conditions-generales-d-utilisation.site-vitrine-conditions-generales-d-utilisation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::site-vitrine-conditions-generales-d-utilisation.site-vitrine-conditions-generales-d-utilisation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSiteVitrineConsultationSiteVitrineConsultation
+  extends Schema.SingleType {
+  collectionName: 'site_vitrine_consultations';
+  info: {
+    singularName: 'site-vitrine-consultation';
+    pluralName: 'site-vitrine-consultations';
+    displayName: 'Site vitrine - Consultation';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    donnez_votre_avis: Attribute.Blocks & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::site-vitrine-consultation.site-vitrine-consultation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::site-vitrine-consultation.site-vitrine-consultation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSiteVitrineDeclarationDAccessibiliteSiteVitrineDeclarationDAccessibilite
+  extends Schema.SingleType {
+  collectionName: 'site_vitrine_declaration_d_accessibilites';
+  info: {
+    singularName: 'site-vitrine-declaration-d-accessibilite';
+    pluralName: 'site-vitrine-declaration-d-accessibilites';
+    displayName: "Site vitrine - D\u00E9claration d'accessibilit\u00E9";
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    declaration: Attribute.Blocks & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::site-vitrine-declaration-d-accessibilite.site-vitrine-declaration-d-accessibilite',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::site-vitrine-declaration-d-accessibilite.site-vitrine-declaration-d-accessibilite',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSiteVitrineMentionsLegaleSiteVitrineMentionsLegale
+  extends Schema.SingleType {
+  collectionName: 'site_vitrine_mentions_legales';
+  info: {
+    singularName: 'site-vitrine-mentions-legale';
+    pluralName: 'site-vitrine-mentions-legales';
+    displayName: 'Site vitrine - Mentions l\u00E9gales';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    mentions_legales: Attribute.Blocks & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::site-vitrine-mentions-legale.site-vitrine-mentions-legale',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::site-vitrine-mentions-legale.site-vitrine-mentions-legale',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSiteVitrinePolitiqueDeConfidentialiteSiteVitrinePolitiqueDeConfidentialite
+  extends Schema.SingleType {
+  collectionName: 'site_vitrine_politique_de_confidentialites';
+  info: {
+    singularName: 'site-vitrine-politique-de-confidentialite';
+    pluralName: 'site-vitrine-politique-de-confidentialites';
+    displayName: 'Site vitrine - Politique de confidentialit\u00E9';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    politique_de_confidentialite: Attribute.Blocks & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::site-vitrine-politique-de-confidentialite.site-vitrine-politique-de-confidentialite',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::site-vitrine-politique-de-confidentialite.site-vitrine-politique-de-confidentialite',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSiteVitrineQuestionAuGouvernementSiteVitrineQuestionAuGouvernement
+  extends Schema.SingleType {
+  collectionName: 'site_vitrine_question_au_gouvernements';
+  info: {
+    singularName: 'site-vitrine-question-au-gouvernement';
+    pluralName: 'site-vitrine-question-au-gouvernements';
+    displayName: 'Site vitrine - Question au gouvernement';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    titre: Attribute.String & Attribute.Required;
+    sous_titre: Attribute.String & Attribute.Required;
+    texte_soutien: Attribute.Blocks & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::site-vitrine-question-au-gouvernement.site-vitrine-question-au-gouvernement',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::site-vitrine-question-au-gouvernement.site-vitrine-question-au-gouvernement',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiThematiqueThematique extends Schema.CollectionType {
   collectionName: 'thematiques';
   info: {
@@ -1690,6 +1910,13 @@ declare module '@strapi/types' {
       'api::page-reponse-aux-questions-au-gouvernement.page-reponse-aux-questions-au-gouvernement': ApiPageReponseAuxQuestionsAuGouvernementPageReponseAuxQuestionsAuGouvernement;
       'api::qa-g-headers-onglet.qa-g-headers-onglet': ApiQaGHeadersOngletQaGHeadersOnglet;
       'api::reponse-du-gouvernement.reponse-du-gouvernement': ApiReponseDuGouvernementReponseDuGouvernement;
+      'api::site-vitrine-accueil.site-vitrine-accueil': ApiSiteVitrineAccueilSiteVitrineAccueil;
+      'api::site-vitrine-conditions-generales-d-utilisation.site-vitrine-conditions-generales-d-utilisation': ApiSiteVitrineConditionsGeneralesDUtilisationSiteVitrineConditionsGeneralesDUtilisation;
+      'api::site-vitrine-consultation.site-vitrine-consultation': ApiSiteVitrineConsultationSiteVitrineConsultation;
+      'api::site-vitrine-declaration-d-accessibilite.site-vitrine-declaration-d-accessibilite': ApiSiteVitrineDeclarationDAccessibiliteSiteVitrineDeclarationDAccessibilite;
+      'api::site-vitrine-mentions-legale.site-vitrine-mentions-legale': ApiSiteVitrineMentionsLegaleSiteVitrineMentionsLegale;
+      'api::site-vitrine-politique-de-confidentialite.site-vitrine-politique-de-confidentialite': ApiSiteVitrinePolitiqueDeConfidentialiteSiteVitrinePolitiqueDeConfidentialite;
+      'api::site-vitrine-question-au-gouvernement.site-vitrine-question-au-gouvernement': ApiSiteVitrineQuestionAuGouvernementSiteVitrineQuestionAuGouvernement;
       'api::thematique.thematique': ApiThematiqueThematique;
       'api::welcome-page-new.welcome-page-new': ApiWelcomePageNewWelcomePageNew;
     }

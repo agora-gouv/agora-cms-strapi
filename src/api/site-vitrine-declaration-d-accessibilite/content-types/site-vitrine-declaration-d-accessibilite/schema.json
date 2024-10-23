@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "site_vitrine_declaration_d_accessibilites",
+  "info": {
+    "singularName": "site-vitrine-declaration-d-accessibilite",
+    "pluralName": "site-vitrine-declaration-d-accessibilites",
+    "displayName": "Site vitrine - Déclaration d'accessibilité"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "declaration": {
+      "type": "blocks",
+      "required": true
+    }
+  }
+}

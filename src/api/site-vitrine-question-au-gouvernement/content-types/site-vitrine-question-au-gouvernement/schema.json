@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "site_vitrine_question_au_gouvernements",
+  "info": {
+    "singularName": "site-vitrine-question-au-gouvernement",
+    "pluralName": "site-vitrine-question-au-gouvernements",
+    "displayName": "Site vitrine - Question au gouvernement",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titre": {
+      "type": "string",
+      "required": true
+    },
+    "sous_titre": {
+      "type": "string",
+      "required": true
+    },
+    "texte_soutien": {
+      "type": "blocks",
+      "required": true
+    }
+  }
+}

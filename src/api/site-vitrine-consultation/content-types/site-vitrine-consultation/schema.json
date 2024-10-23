@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "site_vitrine_consultations",
+  "info": {
+    "singularName": "site-vitrine-consultation",
+    "pluralName": "site-vitrine-consultations",
+    "displayName": "Site vitrine - Consultation"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "donnez_votre_avis": {
+      "type": "blocks",
+      "required": true
+    }
+  }
+}
