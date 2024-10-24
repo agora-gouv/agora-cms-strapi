@@ -1455,6 +1455,7 @@ export interface ApiPageQuestionsAuGouvernementPageQuestionsAuGouvernement
   };
   attributes: {
     information_bottomsheet: Attribute.Text & Attribute.Required;
+    nombre_de_questions: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

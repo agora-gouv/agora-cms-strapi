@@ -15,6 +15,10 @@
     "information_bottomsheet": {
       "type": "text",
       "required": true
+    },
+    "nombre_de_questions": {
+      "type": "string",
+      "required": true
     }
   }
 }
