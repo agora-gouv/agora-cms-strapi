@@ -8,7 +8,8 @@
   "attributes": {
     "label": {
       "type": "string",
-      "required": true
+      "required": true,
+      "maxLength": 255
     },
     "numero_de_la_question_suivante": {
       "type": "integer",

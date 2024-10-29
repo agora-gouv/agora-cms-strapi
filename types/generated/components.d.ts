@@ -94,7 +94,11 @@ export interface QuestionDeConsultationChoixConditionnel
     description: '';
   };
   attributes: {
-    label: Attribute.String & Attribute.Required;
+    label: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 255;
+      }>;
     numero_de_la_question_suivante: Attribute.Integer & Attribute.Required;
     ouvert: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
   };
@@ -107,7 +111,11 @@ export interface QuestionDeConsultationChoix extends Schema.Component {
     description: '';
   };
   attributes: {
-    label: Attribute.String & Attribute.Required;
+    label: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 255;
+      }>;
     ouvert: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
   };
 }
