@@ -1860,7 +1860,7 @@ export interface ApiWelcomePageNewWelcomePageNew extends Schema.CollectionType {
       [
         '/consultationsPage',
         '/qagsPage',
-        '/consultationDetailsPage',
+        '/consultation/dynamic',
         '/qagDetailsPage'
       ]
     > &

@@ -32,7 +32,7 @@
       "enum": [
         "/consultationsPage",
         "/qagsPage",
-        "/consultationDetailsPage",
+        "/consultation/dynamic",
         "/qagDetailsPage"
       ],
       "default": "/consultationsPage",
