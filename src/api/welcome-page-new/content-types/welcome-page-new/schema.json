@@ -31,7 +31,9 @@
       "type": "enumeration",
       "enum": [
         "/consultationsPage",
-        "/qagsPage"
+        "/qagsPage",
+        "/consultationDetailsPage",
+        "/qagDetailsPage"
       ],
       "default": "/consultationsPage",
       "required": true

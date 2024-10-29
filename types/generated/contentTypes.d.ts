@@ -1857,7 +1857,12 @@ export interface ApiWelcomePageNewWelcomePageNew extends Schema.CollectionType {
     date_de_debut: Attribute.DateTime & Attribute.Required;
     page_route_argument_mobile: Attribute.String;
     page_route_mobile_enum: Attribute.Enumeration<
-      ['/consultationsPage', '/qagsPage']
+      [
+        '/consultationsPage',
+        '/qagsPage',
+        '/consultationDetailsPage',
+        '/qagDetailsPage'
+      ]
     > &
       Attribute.Required &
       Attribute.DefaultTo<'/consultationsPage'>;
