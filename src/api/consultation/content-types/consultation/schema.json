@@ -104,7 +104,7 @@
     "territoire": {
       "type": "enumeration",
       "enum": [
-        "National",
+        "France",
         "Français de l'étranger",
         "Ain",
         "Aisne",

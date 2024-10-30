@@ -937,7 +937,7 @@ export interface ApiConsultationConsultation extends Schema.CollectionType {
     >;
     territoire: Attribute.Enumeration<
       [
-        'National',
+        'France',
         "Fran\u00E7ais de l'\u00E9tranger",
         'Ain',
         'Aisne',
