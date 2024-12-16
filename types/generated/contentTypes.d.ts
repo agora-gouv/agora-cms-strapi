@@ -1064,6 +1064,12 @@ export interface ApiConsultationConsultation extends Schema.CollectionType {
       ]
     > &
       Attribute.Required;
+    titre_page_web: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Grande consultation citoyenne'>;
+    sous_titre_page_web: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'lanc\u00E9e par le Gouvernement'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

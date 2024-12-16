@@ -230,6 +230,16 @@
         "Yvelines"
       ],
       "required": true
+    },
+    "titre_page_web": {
+      "type": "string",
+      "default": "Grande consultation citoyenne",
+      "required": true
+    },
+    "sous_titre_page_web": {
+      "type": "string",
+      "required": true,
+      "default": "lancée par le Gouvernement"
     }
   }
 }
