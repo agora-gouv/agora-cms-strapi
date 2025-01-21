@@ -67,6 +67,12 @@
       "type": "string",
       "required": false,
       "maxLength": 26
+    },
+    "recap_emoji": {
+      "type": "string"
+    },
+    "recap_label": {
+      "type": "string"
     }
   }
 }

@@ -1282,6 +1282,8 @@ export interface ApiConsultationContenuAnalyseDesReponseConsultationContenuAnaly
       Attribute.SetMinMaxLength<{
         maxLength: 26;
       }>;
+    recap_emoji: Attribute.String;
+    recap_label: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1337,6 +1339,8 @@ export interface ApiConsultationContenuAutreConsultationContenuAutre
       Attribute.SetMinMaxLength<{
         maxLength: 26;
       }>;
+    recap_emoji: Attribute.String;
+    recap_label: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1400,6 +1404,8 @@ export interface ApiConsultationContenuReponseDuCommanditaireConsultationContenu
       Attribute.SetMinMaxLength<{
         maxLength: 26;
       }>;
+    recap_emoji: Attribute.String;
+    recap_label: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
