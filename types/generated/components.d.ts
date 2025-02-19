@@ -132,6 +132,7 @@ export interface QuestionDeConsultationDescription extends Schema.Component {
     description: Attribute.Blocks & Attribute.Required;
     question_suivante: Attribute.Integer;
     url_image: Attribute.String;
+    transcription_image: Attribute.Text;
   };
 }
 

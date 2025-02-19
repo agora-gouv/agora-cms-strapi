@@ -23,6 +23,9 @@
     },
     "url_image": {
       "type": "string"
+    },
+    "transcription_image": {
+      "type": "text"
     }
   }
 }
