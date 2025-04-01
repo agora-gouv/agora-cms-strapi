@@ -74,6 +74,7 @@ export interface ConsultationSectionSectionVideo extends Schema.Component {
   info: {
     displayName: 'Section vid\u00E9o';
     icon: 'play';
+    description: '';
   };
   attributes: {
     url: Attribute.String & Attribute.Required;
