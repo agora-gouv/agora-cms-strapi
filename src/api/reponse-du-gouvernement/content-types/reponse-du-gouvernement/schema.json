@@ -41,6 +41,13 @@
     "feedbackQuestion": {
       "type": "text",
       "required": true
+    },
+    "auteurPortrait": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

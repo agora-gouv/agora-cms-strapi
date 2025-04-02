@@ -1581,6 +1581,7 @@ export interface ApiReponseDuGouvernementReponseDuGouvernement
         number
       >;
     feedbackQuestion: Attribute.Text & Attribute.Required;
+    auteurPortrait: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -222,6 +222,7 @@ export interface ReponseReponseVideo extends Schema.Component {
     page_title: Attribute.String &
       Attribute.Required &
       Attribute.DefaultTo<'R\u00E9ponse du Gouvernement'>;
+    video: Attribute.Media & Attribute.Required;
   };
 }
 
