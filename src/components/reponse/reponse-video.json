@@ -37,6 +37,14 @@
       "type": "string",
       "required": true,
       "default": "Réponse du Gouvernement"
+    },
+    "video": {
+      "allowedTypes": [
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
     }
   }
 }

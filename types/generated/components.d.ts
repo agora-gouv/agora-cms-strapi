@@ -40,10 +40,12 @@ export interface ConsultationSectionSectionImage extends Schema.Component {
   info: {
     displayName: 'Section image';
     icon: 'picture';
+    description: '';
   };
   attributes: {
     url: Attribute.String & Attribute.Required;
     description_accessible_de_l_image: Attribute.Text & Attribute.Required;
+    image: Attribute.Media & Attribute.Required;
   };
 }
 
@@ -84,6 +86,7 @@ export interface ConsultationSectionSectionVideo extends Schema.Component {
     poste_auteur: Attribute.String & Attribute.Required;
     date_tournage: Attribute.Date & Attribute.Required;
     transcription: Attribute.Text & Attribute.Required;
+    video: Attribute.Media & Attribute.Required;
   };
 }
 
@@ -134,6 +137,7 @@ export interface QuestionDeConsultationDescription extends Schema.Component {
     question_suivante: Attribute.Integer;
     url_image: Attribute.String;
     transcription_image: Attribute.Text;
+    image: Attribute.Media;
   };
 }
 
@@ -223,6 +227,7 @@ export interface ReponseReponseVideo extends Schema.Component {
     page_title: Attribute.String &
       Attribute.Required &
       Attribute.DefaultTo<'R\u00E9ponse du Gouvernement'>;
+    video: Attribute.Media & Attribute.Required;
   };
 }
 

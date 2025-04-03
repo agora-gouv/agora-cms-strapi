@@ -36,6 +36,14 @@
     "flamme_label": {
       "type": "string",
       "required": false
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
     }
   }
 }
