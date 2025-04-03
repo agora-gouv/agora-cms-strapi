@@ -2,7 +2,8 @@
   "collectionName": "components_consultation_section_section_videos",
   "info": {
     "displayName": "Section vidéo",
-    "icon": "play"
+    "icon": "play",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -32,6 +33,14 @@
     },
     "transcription": {
       "type": "text",
+      "required": true
+    },
+    "video": {
+      "allowedTypes": [
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false,
       "required": true
     }
   }

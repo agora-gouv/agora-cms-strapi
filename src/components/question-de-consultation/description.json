@@ -26,6 +26,13 @@
     },
     "transcription_image": {
       "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

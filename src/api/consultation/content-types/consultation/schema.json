@@ -240,6 +240,22 @@
       "type": "string",
       "required": true,
       "default": "lancée par le Gouvernement"
+    },
+    "image_de_couverture": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "image_page_de_contenu": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
     }
   }
 }

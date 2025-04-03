@@ -844,6 +844,7 @@ export interface ApiConcertationConcertation extends Schema.CollectionType {
       'api::thematique.thematique'
     >;
     flamme_label: Attribute.String;
+    image: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1070,6 +1071,8 @@ export interface ApiConsultationConsultation extends Schema.CollectionType {
     sous_titre_page_web: Attribute.String &
       Attribute.Required &
       Attribute.DefaultTo<'lanc\u00E9e par le Gouvernement'>;
+    image_de_couverture: Attribute.Media & Attribute.Required;
+    image_page_de_contenu: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1284,6 +1287,7 @@ export interface ApiConsultationContenuAnalyseDesReponseConsultationContenuAnaly
       }>;
     recap_emoji: Attribute.String;
     recap_label: Attribute.String;
+    pdf_analyse: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1581,7 +1585,7 @@ export interface ApiReponseDuGouvernementReponseDuGouvernement
         number
       >;
     feedbackQuestion: Attribute.Text & Attribute.Required;
-    auteurPortrait: Attribute.Media;
+    auteurPortrait: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

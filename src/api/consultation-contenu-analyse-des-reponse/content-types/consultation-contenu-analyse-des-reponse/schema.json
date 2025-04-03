@@ -73,6 +73,14 @@
     },
     "recap_label": {
       "type": "string"
+    },
+    "pdf_analyse": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
     }
   }
 }
