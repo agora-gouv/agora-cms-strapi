@@ -1427,6 +1427,51 @@ export interface ApiConsultationContenuReponseDuCommanditaireConsultationContenu
   };
 }
 
+export interface ApiFicheInventaireFicheInventaire
+  extends Schema.CollectionType {
+  collectionName: 'fiche_inventaires';
+  info: {
+    singularName: 'fiche-inventaire';
+    pluralName: 'fiche-inventaires';
+    displayName: 'Fiche Inventaire';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    etape_1: Attribute.Blocks & Attribute.Required;
+    etape_2: Attribute.DynamicZone<
+      [
+        'consultation-section.section-accordeon',
+        'consultation-section.section-chiffre',
+        'consultation-section.section-citation',
+        'consultation-section.section-image',
+        'consultation-section.section-texte-riche',
+        'consultation-section.section-titre',
+        'consultation-section.section-video'
+      ]
+    > &
+      Attribute.Required;
+    etape_3_reponse_commanditaire: Attribute.Blocks & Attribute.Required;
+    etape_3_mise_en_oeuvre: Attribute.Blocks & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::fiche-inventaire.fiche-inventaire',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::fiche-inventaire.fiche-inventaire',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPagePoserMaQuestionPagePoserMaQuestion
   extends Schema.SingleType {
   collectionName: 'page_poser_ma_questions';
@@ -1928,6 +1973,7 @@ declare module '@strapi/types' {
       'api::consultation-contenu-analyse-des-reponse.consultation-contenu-analyse-des-reponse': ApiConsultationContenuAnalyseDesReponseConsultationContenuAnalyseDesReponse;
       'api::consultation-contenu-autre.consultation-contenu-autre': ApiConsultationContenuAutreConsultationContenuAutre;
       'api::consultation-contenu-reponse-du-commanditaire.consultation-contenu-reponse-du-commanditaire': ApiConsultationContenuReponseDuCommanditaireConsultationContenuReponseDuCommanditaire;
+      'api::fiche-inventaire.fiche-inventaire': ApiFicheInventaireFicheInventaire;
       'api::page-poser-ma-question.page-poser-ma-question': ApiPagePoserMaQuestionPagePoserMaQuestion;
       'api::page-questions-au-gouvernement.page-questions-au-gouvernement': ApiPageQuestionsAuGouvernementPageQuestionsAuGouvernement;
       'api::page-reponse-aux-questions-au-gouvernement.page-reponse-aux-questions-au-gouvernement': ApiPageReponseAuxQuestionsAuGouvernementPageReponseAuxQuestionsAuGouvernement;

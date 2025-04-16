@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fiche_inventaires",
+  "info": {
+    "singularName": "fiche-inventaire",
+    "pluralName": "fiche-inventaires",
+    "displayName": "Fiche Inventaire"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "etape_1": {
+      "type": "blocks",
+      "required": true
+    },
+    "etape_2": {
+      "type": "dynamiczone",
+      "components": [
+        "consultation-section.section-accordeon",
+        "consultation-section.section-chiffre",
+        "consultation-section.section-citation",
+        "consultation-section.section-image",
+        "consultation-section.section-texte-riche",
+        "consultation-section.section-titre",
+        "consultation-section.section-video"
+      ],
+      "required": true
+    },
+    "etape_3_reponse_commanditaire": {
+      "type": "blocks",
+      "required": true
+    },
+    "etape_3_mise_en_oeuvre": {
+      "type": "blocks",
+      "required": true
+    }
+  }
+}
