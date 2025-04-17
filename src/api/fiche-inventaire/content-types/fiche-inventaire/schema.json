@@ -4,37 +4,74 @@
   "info": {
     "singularName": "fiche-inventaire",
     "pluralName": "fiche-inventaires",
-    "displayName": "Fiche Inventaire"
+    "displayName": "Fiche Inventaire",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "etape_1": {
+    "etape_1_lancement": {
       "type": "blocks",
       "required": true
     },
-    "etape_2": {
-      "type": "dynamiczone",
-      "components": [
-        "consultation-section.section-accordeon",
-        "consultation-section.section-chiffre",
-        "consultation-section.section-citation",
-        "consultation-section.section-image",
-        "consultation-section.section-texte-riche",
-        "consultation-section.section-titre",
-        "consultation-section.section-video"
+    "etape_2_analyse": {
+      "type": "blocks"
+    },
+    "etape_3_suivi": {
+      "type": "blocks",
+      "required": false
+    },
+    "titre": {
+      "type": "string",
+      "required": true
+    },
+    "debut": {
+      "type": "date",
+      "required": true
+    },
+    "fin": {
+      "type": "date",
+      "required": true
+    },
+    "porteur": {
+      "type": "string",
+      "required": true
+    },
+    "lien_site": {
+      "type": "string",
+      "required": true
+    },
+    "condition_participation": {
+      "type": "enumeration",
+      "enum": [
+        "ouvert à tous",
+        "tirage au sort"
       ],
       "required": true
     },
-    "etape_3_reponse_commanditaire": {
-      "type": "blocks",
+    "modalite_participation": {
+      "type": "enumeration",
+      "enum": [
+        "en ligne",
+        "présentiel"
+      ],
       "required": true
     },
-    "etape_3_mise_en_oeuvre": {
-      "type": "blocks",
+    "objectif": {
+      "type": "enumeration",
+      "enum": [
+        "EXPRIMER UNE OPINION",
+        "CONSTRUIRE UN AVIS COLLECTIF",
+        "INTERPELLER LE GOUVERNEMENT"
+      ],
       "required": true
+    },
+    "thematique": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::thematique.thematique"
     }
   }
 }

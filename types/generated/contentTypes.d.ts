@@ -1434,26 +1434,41 @@ export interface ApiFicheInventaireFicheInventaire
     singularName: 'fiche-inventaire';
     pluralName: 'fiche-inventaires';
     displayName: 'Fiche Inventaire';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    etape_1: Attribute.Blocks & Attribute.Required;
-    etape_2: Attribute.DynamicZone<
+    etape_1_lancement: Attribute.Blocks & Attribute.Required;
+    etape_2_analyse: Attribute.Blocks;
+    etape_3_suivi: Attribute.Blocks;
+    titre: Attribute.String & Attribute.Required;
+    debut: Attribute.Date & Attribute.Required;
+    fin: Attribute.Date & Attribute.Required;
+    porteur: Attribute.String & Attribute.Required;
+    lien_site: Attribute.String & Attribute.Required;
+    condition_participation: Attribute.Enumeration<
+      ['ouvert \u00E0 tous', 'tirage au sort']
+    > &
+      Attribute.Required;
+    modalite_participation: Attribute.Enumeration<
+      ['en ligne', 'pr\u00E9sentiel']
+    > &
+      Attribute.Required;
+    objectif: Attribute.Enumeration<
       [
-        'consultation-section.section-accordeon',
-        'consultation-section.section-chiffre',
-        'consultation-section.section-citation',
-        'consultation-section.section-image',
-        'consultation-section.section-texte-riche',
-        'consultation-section.section-titre',
-        'consultation-section.section-video'
+        'EXPRIMER UNE OPINION',
+        'CONSTRUIRE UN AVIS COLLECTIF',
+        'INTERPELLER LE GOUVERNEMENT'
       ]
     > &
       Attribute.Required;
-    etape_3_reponse_commanditaire: Attribute.Blocks & Attribute.Required;
-    etape_3_mise_en_oeuvre: Attribute.Blocks & Attribute.Required;
+    thematique: Attribute.Relation<
+      'api::fiche-inventaire.fiche-inventaire',
+      'oneToOne',
+      'api::thematique.thematique'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
