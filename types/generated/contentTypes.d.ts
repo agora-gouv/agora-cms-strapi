@@ -1482,9 +1482,9 @@ export interface ApiFicheInventaireFicheInventaire
       Attribute.DefaultTo<'CONSULTATION EN COURS'>;
     statut: Attribute.Enumeration<
       [
-        'BIENT\u00D4T OUVERT \u00C0 LA PARTICIPATION',
-        'OUVERT \u00C0 LA PARTICIPATION',
-        'CONSULTATION TERMIN\u00C9E'
+        'bient\u00F4t ouvert \u00E0 la participation',
+        'ouvert \u00E0 la participation',
+        'consultation termin\u00E9e'
       ]
     > &
       Attribute.Required;
