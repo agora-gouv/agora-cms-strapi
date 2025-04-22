@@ -1427,6 +1427,86 @@ export interface ApiConsultationContenuReponseDuCommanditaireConsultationContenu
   };
 }
 
+export interface ApiFicheInventaireFicheInventaire
+  extends Schema.CollectionType {
+  collectionName: 'fiche_inventaires';
+  info: {
+    singularName: 'fiche-inventaire';
+    pluralName: 'fiche-inventaires';
+    displayName: 'Fiche Inventaire';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    etape_1_lancement: Attribute.Blocks & Attribute.Required;
+    etape_2_analyse: Attribute.Blocks;
+    etape_3_suivi: Attribute.Blocks;
+    titre: Attribute.String & Attribute.Required;
+    debut: Attribute.Date & Attribute.Required;
+    fin: Attribute.Date & Attribute.Required;
+    porteur: Attribute.String & Attribute.Required;
+    lien_site: Attribute.String & Attribute.Required;
+    condition_participation: Attribute.Enumeration<
+      ['ouvert \u00E0 tous', 'tirage au sort']
+    > &
+      Attribute.Required;
+    modalite_participation: Attribute.Enumeration<
+      ['en ligne', 'pr\u00E9sentiel']
+    > &
+      Attribute.Required;
+    objectif: Attribute.Enumeration<
+      [
+        'EXPRIMER UNE OPINION',
+        'CONSTRUIRE UN AVIS COLLECTIF',
+        'INTERPELLER LE GOUVERNEMENT'
+      ]
+    > &
+      Attribute.Required;
+    thematique: Attribute.Relation<
+      'api::fiche-inventaire.fiche-inventaire',
+      'oneToOne',
+      'api::thematique.thematique'
+    >;
+    illustration: Attribute.Media & Attribute.Required;
+    etape: Attribute.Enumeration<
+      [
+        'CONSULTATION EN COURS',
+        'CONSULTATION TERMIN\u00C9E',
+        'ANALYSE DES R\u00C9SULTATS',
+        'SUIVI DE LA CONSULTATION'
+      ]
+    > &
+      Attribute.Required &
+      Attribute.DefaultTo<'CONSULTATION EN COURS'>;
+    statut: Attribute.Enumeration<
+      [
+        'BIENT\u00D4T OUVERT \u00C0 LA PARTICIPATION',
+        'OUVERT \u00C0 LA PARTICIPATION',
+        'CONSULTATION TERMIN\u00C9E'
+      ]
+    > &
+      Attribute.Required;
+    annee_de_lancement: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::fiche-inventaire.fiche-inventaire',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::fiche-inventaire.fiche-inventaire',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPagePoserMaQuestionPagePoserMaQuestion
   extends Schema.SingleType {
   collectionName: 'page_poser_ma_questions';
@@ -1928,6 +2008,7 @@ declare module '@strapi/types' {
       'api::consultation-contenu-analyse-des-reponse.consultation-contenu-analyse-des-reponse': ApiConsultationContenuAnalyseDesReponseConsultationContenuAnalyseDesReponse;
       'api::consultation-contenu-autre.consultation-contenu-autre': ApiConsultationContenuAutreConsultationContenuAutre;
       'api::consultation-contenu-reponse-du-commanditaire.consultation-contenu-reponse-du-commanditaire': ApiConsultationContenuReponseDuCommanditaireConsultationContenuReponseDuCommanditaire;
+      'api::fiche-inventaire.fiche-inventaire': ApiFicheInventaireFicheInventaire;
       'api::page-poser-ma-question.page-poser-ma-question': ApiPagePoserMaQuestionPagePoserMaQuestion;
       'api::page-questions-au-gouvernement.page-questions-au-gouvernement': ApiPageQuestionsAuGouvernementPageQuestionsAuGouvernement;
       'api::page-reponse-aux-questions-au-gouvernement.page-reponse-aux-questions-au-gouvernement': ApiPageReponseAuxQuestionsAuGouvernementPageReponseAuxQuestionsAuGouvernement;

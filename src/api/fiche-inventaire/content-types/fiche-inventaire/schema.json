@@ -1,0 +1,109 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fiche_inventaires",
+  "info": {
+    "singularName": "fiche-inventaire",
+    "pluralName": "fiche-inventaires",
+    "displayName": "Fiche Inventaire",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "etape_1_lancement": {
+      "type": "blocks",
+      "required": true
+    },
+    "etape_2_analyse": {
+      "type": "blocks"
+    },
+    "etape_3_suivi": {
+      "type": "blocks",
+      "required": false
+    },
+    "titre": {
+      "type": "string",
+      "required": true
+    },
+    "debut": {
+      "type": "date",
+      "required": true
+    },
+    "fin": {
+      "type": "date",
+      "required": true
+    },
+    "porteur": {
+      "type": "string",
+      "required": true
+    },
+    "lien_site": {
+      "type": "string",
+      "required": true
+    },
+    "condition_participation": {
+      "type": "enumeration",
+      "enum": [
+        "ouvert à tous",
+        "tirage au sort"
+      ],
+      "required": true
+    },
+    "modalite_participation": {
+      "type": "enumeration",
+      "enum": [
+        "en ligne",
+        "présentiel"
+      ],
+      "required": true
+    },
+    "objectif": {
+      "type": "enumeration",
+      "enum": [
+        "EXPRIMER UNE OPINION",
+        "CONSTRUIRE UN AVIS COLLECTIF",
+        "INTERPELLER LE GOUVERNEMENT"
+      ],
+      "required": true
+    },
+    "thematique": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::thematique.thematique"
+    },
+    "illustration": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "etape": {
+      "type": "enumeration",
+      "enum": [
+        "CONSULTATION EN COURS",
+        "CONSULTATION TERMINÉE",
+        "ANALYSE DES RÉSULTATS",
+        "SUIVI DE LA CONSULTATION"
+      ],
+      "required": true,
+      "default": "CONSULTATION EN COURS"
+    },
+    "statut": {
+      "type": "enumeration",
+      "enum": [
+        "BIENTÔT OUVERT À LA PARTICIPATION",
+        "OUVERT À LA PARTICIPATION",
+        "CONSULTATION TERMINÉE"
+      ],
+      "required": true
+    },
+    "annee_de_lancement": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
