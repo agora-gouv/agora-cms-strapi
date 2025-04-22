@@ -1469,6 +1469,26 @@ export interface ApiFicheInventaireFicheInventaire
       'oneToOne',
       'api::thematique.thematique'
     >;
+    illustration: Attribute.Media & Attribute.Required;
+    etape: Attribute.Enumeration<
+      [
+        'CONSULTATION EN COURS',
+        'CONSULTATION TERMIN\u00C9E',
+        'ANALYSE DES R\u00C9SULTATS',
+        'SUIVI DE LA CONSULTATION'
+      ]
+    > &
+      Attribute.Required &
+      Attribute.DefaultTo<'CONSULTATION EN COURS'>;
+    statut: Attribute.Enumeration<
+      [
+        'BIENT\u00D4T OUVERT \u00C0 LA PARTICIPATION',
+        'OUVERT \u00C0 LA PARTICIPATION',
+        'CONSULTATION TERMIN\u00C9E'
+      ]
+    > &
+      Attribute.Required;
+    annee_de_lancement: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

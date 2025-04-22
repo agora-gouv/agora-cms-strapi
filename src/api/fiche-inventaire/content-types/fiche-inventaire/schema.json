@@ -72,6 +72,38 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::thematique.thematique"
+    },
+    "illustration": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "etape": {
+      "type": "enumeration",
+      "enum": [
+        "CONSULTATION EN COURS",
+        "CONSULTATION TERMINÉE",
+        "ANALYSE DES RÉSULTATS",
+        "SUIVI DE LA CONSULTATION"
+      ],
+      "required": true,
+      "default": "CONSULTATION EN COURS"
+    },
+    "statut": {
+      "type": "enumeration",
+      "enum": [
+        "BIENTÔT OUVERT À LA PARTICIPATION",
+        "OUVERT À LA PARTICIPATION",
+        "CONSULTATION TERMINÉE"
+      ],
+      "required": true
+    },
+    "annee_de_lancement": {
+      "type": "string",
+      "required": true
     }
   }
 }
