@@ -95,9 +95,9 @@
     "statut": {
       "type": "enumeration",
       "enum": [
-        "BIENTÔT OUVERT À LA PARTICIPATION",
-        "OUVERT À LA PARTICIPATION",
-        "CONSULTATION TERMINÉE"
+        "bientôt ouvert à la participation",
+        "ouvert à la participation",
+        "consultation terminée"
       ],
       "required": true
     },
