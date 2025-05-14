@@ -55,16 +55,7 @@
       "type": "enumeration",
       "enum": [
         "en ligne",
-        "présentiel"
-      ],
-      "required": true
-    },
-    "objectif": {
-      "type": "enumeration",
-      "enum": [
-        "EXPRIMER UNE OPINION",
-        "CONSTRUIRE UN AVIS COLLECTIF",
-        "INTERPELLER LE GOUVERNEMENT"
+        "en présentiel"
       ],
       "required": true
     },
@@ -84,20 +75,21 @@
     "etape": {
       "type": "enumeration",
       "enum": [
-        "CONSULTATION EN COURS",
-        "CONSULTATION TERMINÉE",
-        "ANALYSE DES RÉSULTATS",
-        "SUIVI DE LA CONSULTATION"
+        "À venir",
+        "En cours",
+        "Résultats à venir",
+        "Résultats disponibles",
+        "✓ Actions"
       ],
       "required": true,
-      "default": "CONSULTATION EN COURS"
+      "default": "À venir"
     },
-    "statut": {
+    "type": {
       "type": "enumeration",
       "enum": [
-        "bientôt ouvert à la participation",
-        "ouvert à la participation",
-        "consultation terminée"
+        "Consultation",
+        "Concertation",
+        "Convention citoyenne"
       ],
       "required": true
     },

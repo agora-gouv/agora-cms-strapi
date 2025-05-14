@@ -1453,15 +1453,7 @@ export interface ApiFicheInventaireFicheInventaire
     > &
       Attribute.Required;
     modalite_participation: Attribute.Enumeration<
-      ['en ligne', 'pr\u00E9sentiel']
-    > &
-      Attribute.Required;
-    objectif: Attribute.Enumeration<
-      [
-        'EXPRIMER UNE OPINION',
-        'CONSTRUIRE UN AVIS COLLECTIF',
-        'INTERPELLER LE GOUVERNEMENT'
-      ]
+      ['en ligne', 'en pr\u00E9sentiel']
     > &
       Attribute.Required;
     thematique: Attribute.Relation<
@@ -1472,20 +1464,17 @@ export interface ApiFicheInventaireFicheInventaire
     illustration: Attribute.Media & Attribute.Required;
     etape: Attribute.Enumeration<
       [
-        'CONSULTATION EN COURS',
-        'CONSULTATION TERMIN\u00C9E',
-        'ANALYSE DES R\u00C9SULTATS',
-        'SUIVI DE LA CONSULTATION'
+        '\u00C0 venir',
+        'En cours',
+        'R\u00E9sultats \u00E0 venir',
+        'R\u00E9sultats disponibles',
+        '\u2713 Actions'
       ]
     > &
       Attribute.Required &
-      Attribute.DefaultTo<'CONSULTATION EN COURS'>;
-    statut: Attribute.Enumeration<
-      [
-        'bient\u00F4t ouvert \u00E0 la participation',
-        'ouvert \u00E0 la participation',
-        'consultation termin\u00E9e'
-      ]
+      Attribute.DefaultTo<'\u00C0 venir'>;
+    type: Attribute.Enumeration<
+      ['Consultation', 'Concertation', 'Convention citoyenne']
     > &
       Attribute.Required;
     annee_de_lancement: Attribute.String & Attribute.Required;
