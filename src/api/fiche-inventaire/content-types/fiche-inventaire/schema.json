@@ -46,16 +46,16 @@
     "condition_participation": {
       "type": "enumeration",
       "enum": [
-        "ouvert à tous",
-        "tirage au sort"
+        "Ouvert à tous",
+        "Tirage au sort représentatif"
       ],
       "required": true
     },
     "modalite_participation": {
       "type": "enumeration",
       "enum": [
-        "en ligne",
-        "en présentiel"
+        "En ligne",
+        "En présentiel"
       ],
       "required": true
     },
@@ -79,7 +79,7 @@
         "En cours",
         "Résultats à venir",
         "Résultats disponibles",
-        "✓ Actions"
+        "Actions"
       ],
       "required": true,
       "default": "À venir"
