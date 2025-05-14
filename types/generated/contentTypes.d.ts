@@ -1449,11 +1449,11 @@ export interface ApiFicheInventaireFicheInventaire
     porteur: Attribute.String & Attribute.Required;
     lien_site: Attribute.String & Attribute.Required;
     condition_participation: Attribute.Enumeration<
-      ['ouvert \u00E0 tous', 'tirage au sort']
+      ['Ouvert \u00E0 tous', 'Tirage au sort repr\u00E9sentatif']
     > &
       Attribute.Required;
     modalite_participation: Attribute.Enumeration<
-      ['en ligne', 'en pr\u00E9sentiel']
+      ['En ligne', 'En pr\u00E9sentiel']
     > &
       Attribute.Required;
     thematique: Attribute.Relation<
@@ -1468,7 +1468,7 @@ export interface ApiFicheInventaireFicheInventaire
         'En cours',
         'R\u00E9sultats \u00E0 venir',
         'R\u00E9sultats disponibles',
-        '\u2713 Actions'
+        'Actions'
       ]
     > &
       Attribute.Required &
