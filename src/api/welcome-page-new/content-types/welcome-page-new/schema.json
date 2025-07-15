@@ -37,6 +37,10 @@
       ],
       "default": "/consultationsPage",
       "required": true
+    },
+    "short_message": {
+      "type": "string",
+      "required": true
     }
   }
 }

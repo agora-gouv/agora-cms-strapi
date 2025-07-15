@@ -1952,6 +1952,7 @@ export interface ApiWelcomePageNewWelcomePageNew extends Schema.CollectionType {
     > &
       Attribute.Required &
       Attribute.DefaultTo<'/consultationsPage'>;
+    short_message: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
