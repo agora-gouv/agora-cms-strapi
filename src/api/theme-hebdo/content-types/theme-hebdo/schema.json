@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "theme_hebdos",
+  "info": {
+    "singularName": "theme-hebdo",
+    "pluralName": "theme-hebdos",
+    "displayName": "theme_hebdo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "theme": {
+      "type": "string",
+      "required": true
+    },
+    "periode": {
+      "type": "string",
+      "required": true
+    },
+    "nom_ministre": {
+      "type": "string",
+      "required": false
+    },
+    "fonction": {
+      "type": "string"
+    },
+    "photo": {
+      "type": "string"
+    },
+    "date_fin": {
+      "type": "datetime",
+      "required": true
+    },
+    "date_debut": {
+      "type": "datetime",
+      "required": true
+    }
+  }
+}
