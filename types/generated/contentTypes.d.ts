@@ -1926,6 +1926,42 @@ export interface ApiThematiqueThematique extends Schema.CollectionType {
   };
 }
 
+export interface ApiThemeHebdoThemeHebdo extends Schema.CollectionType {
+  collectionName: 'theme_hebdos';
+  info: {
+    singularName: 'theme-hebdo';
+    pluralName: 'theme-hebdos';
+    displayName: 'theme_hebdo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    theme: Attribute.String & Attribute.Required;
+    periode: Attribute.String & Attribute.Required;
+    nom_ministre: Attribute.String;
+    fonction: Attribute.String;
+    photo: Attribute.String;
+    date_fin: Attribute.DateTime & Attribute.Required;
+    date_debut: Attribute.DateTime & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::theme-hebdo.theme-hebdo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::theme-hebdo.theme-hebdo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiWelcomePageNewWelcomePageNew extends Schema.CollectionType {
   collectionName: 'welcome_page_news';
   info: {
@@ -2012,6 +2048,7 @@ declare module '@strapi/types' {
       'api::site-vitrine-politique-de-confidentialite.site-vitrine-politique-de-confidentialite': ApiSiteVitrinePolitiqueDeConfidentialiteSiteVitrinePolitiqueDeConfidentialite;
       'api::site-vitrine-question-au-gouvernement.site-vitrine-question-au-gouvernement': ApiSiteVitrineQuestionAuGouvernementSiteVitrineQuestionAuGouvernement;
       'api::thematique.thematique': ApiThematiqueThematique;
+      'api::theme-hebdo.theme-hebdo': ApiThemeHebdoThemeHebdo;
       'api::welcome-page-new.welcome-page-new': ApiWelcomePageNewWelcomePageNew;
     }
   }
