@@ -1932,13 +1932,14 @@ export interface ApiThemeHebdoThemeHebdo extends Schema.CollectionType {
     singularName: 'theme-hebdo';
     pluralName: 'theme-hebdos';
     displayName: 'theme_hebdo';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     theme: Attribute.String & Attribute.Required;
-    periode: Attribute.String & Attribute.Required;
+    periode: Attribute.String;
     nom_ministre: Attribute.String;
     fonction: Attribute.String;
     photo: Attribute.String;
