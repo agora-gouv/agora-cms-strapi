@@ -4,7 +4,8 @@
   "info": {
     "singularName": "theme-hebdo",
     "pluralName": "theme-hebdos",
-    "displayName": "theme_hebdo"
+    "displayName": "theme_hebdo",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -17,7 +18,7 @@
     },
     "periode": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "nom_ministre": {
       "type": "string",
