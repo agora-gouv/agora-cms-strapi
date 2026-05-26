@@ -19,6 +19,12 @@
     "nombre_de_questions": {
       "type": "string",
       "required": true
+    },
+    "comment_ca_marche": {
+      "type": "text"
+    },
+    "programme_du_mois": {
+      "type": "blocks"
     }
   }
 }
