@@ -1541,6 +1541,8 @@ export interface ApiPageQuestionsAuGouvernementPageQuestionsAuGouvernement
   attributes: {
     information_bottomsheet: Attribute.Text & Attribute.Required;
     nombre_de_questions: Attribute.String & Attribute.Required;
+    comment_ca_marche: Attribute.Text;
+    programme_du_mois: Attribute.Blocks;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
