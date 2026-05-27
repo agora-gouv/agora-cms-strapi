@@ -1944,9 +1944,9 @@ export interface ApiThemeHebdoThemeHebdo extends Schema.CollectionType {
     periode: Attribute.String;
     nom_ministre: Attribute.String;
     fonction: Attribute.String;
-    photo: Attribute.String;
     date_fin: Attribute.DateTime & Attribute.Required;
     date_debut: Attribute.DateTime & Attribute.Required;
+    photo: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
