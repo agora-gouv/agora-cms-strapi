@@ -1947,6 +1947,9 @@ export interface ApiThemeHebdoThemeHebdo extends Schema.CollectionType {
     date_fin: Attribute.DateTime & Attribute.Required;
     date_debut: Attribute.DateTime & Attribute.Required;
     photo: Attribute.Media;
+    est_theme_libre: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
