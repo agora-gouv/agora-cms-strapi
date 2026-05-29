@@ -43,7 +43,7 @@
         "images"
       ]
     },
-    "est_semaine_libre": {
+    "est_theme_libre": {
       "type": "boolean",
       "default": false,
       "required": true
