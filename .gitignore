@@ -31,7 +31,6 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 
-
 ############################
 # Packages
 ############################
@@ -113,3 +112,6 @@ exports
 dist
 build
 .strapi-updater.json
+
+types/generated/*
+
